@@ -1,0 +1,5 @@
+﻿  week2.c
+C:\Users\user\Documents\GitHub\SenecaCPP\S1\IPC144\W2_class\W2_class\week2.c(43,9): warning C4477: 'printf' : format string '%.18lf' requires an argument of type 'double', but variadic argument 1 has type 'int'
+C:\Users\user\Documents\GitHub\SenecaCPP\S1\IPC144\W2_class\W2_class\week2.c(36,22): warning C4101: 't2': unreferenced local variable
+C:\Users\user\Documents\GitHub\SenecaCPP\S1\IPC144\W2_class\W2_class\week2.c(36,18): warning C4101: 't1': unreferenced local variable
+  W2_class.vcxproj -> C:\Users\user\Documents\GitHub\SenecaCPP\S1\IPC144\W2_class\x64\Debug\W2_class.exe
