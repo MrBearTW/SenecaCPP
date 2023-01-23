@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="w2p1.c">
+    <ClCompile Include="w2p2.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

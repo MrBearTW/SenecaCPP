@@ -1,5 +1,4 @@
-﻿  w2p1.c
-C:\Users\user\Documents\GitHub\SenecaCPP\S1\IPC144\Workshop2\w2p1.c(51,22): warning C4244: '=': conversion from 'const double' to 'float', possible loss of data
-C:\Users\user\Documents\GitHub\SenecaCPP\S1\IPC144\Workshop2\w2p1.c(55,12): warning C4477: 'printf' : format string '%.4lf' requires an argument of type 'double', but variadic argument 1 has type 'int'
-C:\Users\user\Documents\GitHub\SenecaCPP\S1\IPC144\Workshop2\w2p1.c(53,36): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+﻿  w2p2.c
+C:\Users\user\Documents\GitHub\SenecaCPP\S1\IPC144\Workshop2\w2p2.c(23,9): warning C4477: 'printf' : format string '%.2lf' requires an argument of type 'double', but variadic argument 1 has type 'int'
+C:\Users\user\Documents\GitHub\SenecaCPP\S1\IPC144\Workshop2\w2p2.c(25,9): warning C4477: 'printf' : format string '%.2lf' requires an argument of type 'double', but variadic argument 1 has type 'int'
   Workshop2.vcxproj -> C:\Users\user\Documents\GitHub\SenecaCPP\S1\IPC144\Workshop2\x64\Debug\Workshop2.exe
