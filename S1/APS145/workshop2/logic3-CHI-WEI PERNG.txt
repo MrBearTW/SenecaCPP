@@ -1,0 +1,40 @@
+Workshop 2 [Logic 3]
+-----------------------------------------
+1.  Declare weather conditions and action variables:	
+        weather: Snow || Ice || Mixed
+        accumulation: In millimeters.
+        temperature: In Celsius degrees
+        outputActions: Display sting.
+
+2.  City service clerks enter input data.
+
+3.  Set weather conditions input
+        weather = Ice;
+        accumulation = accumulation;
+        temperature = temperature;
+
+4.  If(accumulation <= 3.0){
+        outputActions = "No Action Required";
+    }elseif(3.0 < accumulation && accumulation <= 5.5){
+        If(temperature < -15.0){
+            outputActions = "1 (Normal) of Sand Trucks";
+        }elseif(-15.0 < temperature && temperature < -7.0){
+            outputActions = "1 (Normal) of Salt Trucks";
+        }else{
+            outputActions = "No Action Required";
+        }
+    }elseif(5.5 < accumulation && accumulation <= 17.0){
+        If(temperature < -15.0){
+            outputActions = "2 (Heavy) of Sand Trucks";
+        }elseif(-15.0 < temperature && temperature < -7.0){
+            outputActions = "2 (Heavy) of Salt Trucks";
+        }else{
+            outputActions = "1 (Heavy) of Salt Trucks";
+        }
+    }else(17.0 < accumulation){
+        outputActions = "State of emergency (Organize army and other jurisdiction support)";
+    }
+
+5. Display: outputActions on web application.
+
+6. End.
