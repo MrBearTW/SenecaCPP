@@ -1,0 +1,58 @@
+///////////////////////////////////////////////////////////////////////////
+                              Reflection
+                          Workshop - #3 (P2)
+ Full Name  :CHI-WEI PERNG
+ Student ID#:121967228
+ Email      :cperng@myseneca.ca
+ Section    :NCC
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+
+1. Determining the customer preference based on the number of servings to the available coffee bag weights required a more complex logical expression. Copy your submitted code for only this part of the logic, and explain the following:
+    A) How many relational expressions did you use and identify each of them.
+    B) How many logical expressions did you use and identify each of them.
+Ans1:
+    This part of the logic
+        orderServings <= 4 && orderServings >= 1
+        orderServings <= 9 && orderServings >= 5
+        orderServings >= 10
+
+    A) 2 type and total 5 relational expressions
+    B) 1 type and total 2 logical expressions
+
+
+2. Referring to Part-1 output #9, show how that logic can be coded in TWO correct ways, one applying DeMorgan’s Law and the other way not using DeMorgan’s Law. Also, identify what method you used in your submitted answer for Part-1.
+Ans2:
+    DeMorgan's Law: 
+        adult = !child && !senior;  --> adult = !(child || senior);
+     
+    (1) 
+        (p3Id != p1Id) && (p3Id != p2Id)
+    (2)
+        !(p3Id == p1Id) && !(p3Id == p2Id)
+        --> !((p3Id == p1Id) || (p3Id == p2Id))
+
+    I use (1) in w3p1.c.
+
+3. Using the variables you used in Part-2, demonstrate two ways you can organize them, so it is optimized for easy to maintain code and contributes towards clarity in how data is stored in the program.
+Ans3:
+    (1) Separate by Variable type.
+        
+        const double GRAMS_IN_LBS = 453.5924;
+        char c1Type, c2Type, c3Type, c1Cream, c2Cream, c3Cream, orderType, orderCream;
+        int c1BageWeight, c2BageWeight, c3BageWeight, orderServings;
+
+    (2) Separate by comment
+        
+        // Product data
+        const double GRAMS_IN_LBS = 453.5924;
+        char c1Type, c2Type, c3Type, c1Cream, c2Cream, c3Cream;
+        int c1BageWeight, c2BageWeight, c3BageWeight;
+        // Customer preference input
+        char orderType, orderCream;
+        int orderServings;
