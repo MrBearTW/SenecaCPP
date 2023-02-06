@@ -1,0 +1,57 @@
+1. Declare variables: 
+    startTime = 0
+    currentTime = 0
+    secondsDiff = 0
+    timeCountdown = 3 (seconds)
+    randomNumber = (1, 2, 3)
+    computerPlay
+    humanPlay
+    winner = (Tie, Human, Computer)
+
+2. Declare correspondence table between randomNumber and objects
+    1 = Rock
+    2 = Paper
+    3 = Scissors
+            
+3. Srart a game
+    DISPLAY: New game starts.
+    
+4. Call random function to yield a number 1~3
+    SET: randomNumber = Random function yield number
+
+5. Use correspondence table to get computerPlay objects
+    SET: computerPlay = correspondenceTable(randomNumber)
+
+6. DISPLAY: Pleace choice Rock / Paper / Scissors
+
+7. Capture current time: 
+	startTime = (now)
+	currentTime = startTime
+
+8. Did human player choose their desired object?
+    NO: Is secondsDiff equal to timeCountdown?
+        YES: Repeat from step #3
+        NO:	a) update currentTime = (now)
+            b) How many seconds have past?
+                secondsDiff = currentTime - startTime
+            c) Repeat from step #8
+    YES: a) SET: humanPlay = human player chooses
+         b) Are humanPlay and computerPlay objects are same?
+             YES: humanPlay and computerPlay objects are same.
+                1)
+                    humanPlay = Rock and computerPlay = Rock: SET: winner = Tie
+                    humanPlay = Scissors and computerPlay = Scissors: SET: winner = Tie
+                    humanPlay = Paper and computerPlay = Paper: SET: winner = Tie 
+                2) DISPLAY: "Tie, Please try again."
+                3) Repeat from step #3
+             NO: humanPlay and computerPlay objects are different.
+                1)
+                    humanPlay = Rock and computerPlay = Scissors: SET: winner = Human.
+                    humanPlay = Scissors and computerPlay = Paper: SET: winner = Human.
+                    humanPlay = Paper and computerPlay = Rock: SET: winner = Human.
+                    humanPlay = Scissors and computerPlay = Rock: SET: winner = Computer.
+                    humanPlay = Paper and computerPlay = Scissors: SET: winner = Computer.
+                    humanPlay = Rock and computerPlay = Paper: SET: winner = Computer.
+                2) DISPLAY: "Winner is [winner]."
+    
+9. End.
