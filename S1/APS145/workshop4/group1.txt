@@ -1,0 +1,82 @@
+APS145-NAA-W4-G1
+
+1.declare pre-game variables:                     
+    playerChoice 
+    computerChoice 
+    randomNumber = (1, 2, 3) 
+
+2.declare game-play variables:                    
+    rock 
+    paper 
+    scissors               
+
+3.declare timer variables: 
+     startTime = 0 
+     currentTime = 0 
+     secondsDiff = 0 
+     countTime = 3 (seconds) 
+
+4. Display “Start playing” 
+
+5. Capture current time:  
+
+    startTime = (now) 
+    currentTime = startTime 
+
+6. Prompt the player to pick rock, paper or scissors 
+
+7. Is secondsDiff equal to countTime ? 
+    Yes: Did the player pick rock,paper or scissors? 
+        Yes:  Store user-entered choice to variable playerChoice 
+        No: 
+            a) Display “Time-up, you did not make a choice. the Game will start again” 
+            b) Return to step #4 
+    NO: 
+        a) update currentTime = (now) 
+        b) How many seconds have past?
+            secondsDiff = currentTime - startTime 
+        c) Did the player pick rock, paper or scissor? 
+            YES: Store user-entered choice to variable playerChoice 
+            NO: Return to step #7 
+
+8. Make the computer to randomly pick rock,paper or scissors 
+    a) Call random function to yield a randomNumber 1~3. 
+    b) switch (randomNumber) 
+        randomNumber = 1: SET: computerChoice = rock 
+        randomNumber = 2: SET: computerChoice = paper 
+        randomNumber = 3: SET: computerChoice = scissors               
+    c) Store computer choice to variable computerChoice 
+ 
+9.Display playerChoice and computerChoice 
+
+10.Convert playerChoice to result 
+    playerChoice = rock: 
+        a)computerChoice = scissors  
+            Display:“Congratulations! You won the game!” 
+        b)computerChoice = paper 
+            Display:“You Lost! Nice Try!” 
+        c)computerChoice = rock 
+            Display:“Tie Game! Game will be repeated!” 
+            Repeat from step#4 
+ 
+    playerChoice = paper: 
+        a)computerChoice = rock 
+            Display:“Congratulations! You won the game!” 
+        b)computerChoice = scissors 
+            Display:“You Lost! Nice Try!” 
+        c)computerChoice = paper 
+            Display:“Tie Game! Game will be repeated!” 
+            Repeat from step#4 
+ 
+    playerChoice = scissors: 
+        a)computerChoice = paper 
+            Display:“Congratulations! You won the game!” 
+        b)computerChoice = rock 
+            Display:“You Lost! Nice Try!” 
+        c)computerChoice = scissors 
+            Display:“Tie Game! Game will be repeated!” 
+            Repeat from step#4 
+ 
+11.Display: “Game Over” 
+
+12.End 
