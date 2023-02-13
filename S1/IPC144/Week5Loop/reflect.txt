@@ -11,3 +11,13 @@ piece of work is entirely of my own creation.
 ///////////////////////////////////////////////////////////////////////////
 
 
+1. Why do we try to use variables and macros to represent information rather than hardcode “magic” numbers (constant literals)? Using the details of this workshop, describe at least three advantages this provides us?
+
+- When this variable is modified, it only needs to modify the place where the variable is declared once.
+- Using a single variable declaration makes it easier to modify the code in the future.
+- Using macros to declare constants can prevent this variable from being modified.
+
+2. The rating values entered by the user required iteration to perform basic validations with each iteration concentrated on testing for values to be within a specific range. Why do we not include additional logic that sums and performs the average? Instead, the sum and average logic is placed outside of any validation routine. Briefly explain two reasons why this is better design and refer to the details of this workshop to justify your answer.
+
+- Because in this iteration, the validations will only pass if it is within this range. So, when calculating sums and averages, there is no need to validate. 
+- Separating the input record from the calculation part can ensure that the verified number is used when doing the calculation, instead of finding out that it cannot pass the verification after the calculation and must re-enter. 
