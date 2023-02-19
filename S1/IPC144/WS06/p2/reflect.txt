@@ -1,0 +1,39 @@
+///////////////////////////////////////////////////////////////////////////
+                               Reflection
+                             Workshop - #6
+Full Name  :CHI-WEI PERNG
+Student ID#:121967228
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+
+1. Why are there three types of iteration constructs if we can make any one of them behave the same way? Refer to your code in this workshop to help backup your answer (do NOT include the code in your answer). Typically, when working with arrays, there is one iteration construct we favour – what is it and explain why it is more preferred over the other options.
+Ams:
+Three types of iteration constructs
+(1) for
+(2) while
+(3) do while
+
+When working with arrays --> for. 
+The for loop is preferred when working with arrays because it allows you to iterate over a specific range of values and it allows you to easily access elements of an array by using their index. 
+
+
+2. Describe what you did to both test and debug your program. How did you go about finding where the problems were located (explain how you did this for both syntactic and semantic problems)?
+Ams:
+
+Go through the workshop input it will check your logic is match the requirement in the workshop pdf. When your output does not match the answer, Find the "Line” specific in the output.txt file where it is different. Check that part of the code. It must have some logic errors. 
+
+For syntactic errors, that means the code fails to follow the rules of the language. IDE can do lots help in this prompt red tailed under code for any potential errors. Other when you compile it, it will alert the errors part. 
+
+For semantic errors, I can use trace table or use IDE debug mode with break point to track how the iteration works in the program. Sometimes I need to recheck the problem to make sure I did not misunderstand the workshop content. 
+
+
+3. When attempting to submit your work, you receive the following error feedback from the submitter:
+Ams:
+
+I think this part after "$" is “user-input data”. 
+It is an error input.
