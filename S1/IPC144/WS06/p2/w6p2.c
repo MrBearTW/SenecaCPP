@@ -15,7 +15,7 @@ piece of work is entirely of my own creation.
 #define INCOME_AT_LEAST 500
 #define INCOME_NO_MORE_THAN 400000
 #define MAX_ITEMS 10
-#define costLeast 100
+#define COST_LEAST 100
 
 #include <stdio.h>
 
@@ -67,11 +67,11 @@ int main(void)
         {
             printf("   Item cost: $");
             scanf("%lf", &cost[i]);
-            if (cost[i] <= 100)
+            if (cost[i] <= COST_LEAST)
             {
                 printf("      ERROR: Cost must be at least $100.00\n");
             }
-        } while (cost[i] <= 100);
+        } while (cost[i] <= COST_LEAST);
 
         do
         {
