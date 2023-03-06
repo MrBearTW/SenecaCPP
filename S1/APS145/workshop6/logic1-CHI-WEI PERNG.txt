@@ -1,0 +1,47 @@
+# Logic 1
+
+## Hardware States
+
+Hardware States - Idle/Ready
+- Payment Module: disabled
+- LCD Colour Screen: enabled
+- Column/Row buttons: disabled
+- “Enter” button: enabled
+- “Correct” button: disabled
+- “Cancel” button: disabled
+- “Pay” button: disabled
+
+Hardware States - Active
+- Payment Module: disabled
+- LCD Colour Screen: enabled
+- Column/Row buttons: enabled
+- “Enter” button: disabled
+- “Correct” button: enabled
+- “Cancel” button: enabled
+- “Pay” button: enabled
+
+Hardware States - Payment
+- Payment Module: enabled
+- LCD Colour Screen: enabled
+- Column/Row buttons: disabled
+- “Enter” button: disabled
+- “Correct” button: enabled
+- “Cancel” button: enabled
+- “Pay” button: disabled
+
+Hardware States - Cancel 
+- Payment Module: disabled
+- LCD Colour Screen: enabled
+- Column/Row buttons: disabled
+- “Enter” button: disabled
+- “Correct” button: disabled
+- “Cancel” button: disabled
+- “Pay” button: disabled
+
+
+
+
+
+
+
+## Software Idle State

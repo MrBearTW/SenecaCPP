@@ -2,7 +2,7 @@
 #include <stdio.h>
 #define MAX_NAME 30
 #define PHONE_LEN 10
-#define POST_CODE_DEN 7
+#define POST_CODE_LEN 7
 #define MAX_MARKS 10
 #define MAX_CLASS 10
 
@@ -11,7 +11,7 @@ struct Address
     char street[MAX_NAME + 1];
     char city[MAX_NAME + 1];
     char province[MAX_NAME + 1];
-    char postCode[POST_CODE_DEN + 1];
+    char postCode[POST_CODE_LEN + 1];
 };
 
 struct Person
@@ -51,7 +51,10 @@ int main(void)
                         23};
 
     printf("(P1) %s is %d years old and has the phone %s and lives at %s, %s, %s, %s\n", p1.name, p1.age, p1.phone, p1.address.street, p1.address.city, p1.address.province, p1.address.postCode);
-
+    struct Person p2 = p1; // copy all info from p1 to p2
+    printf("(P2) %s is %d years old and has the phone %s\n",
+           p2.name, p2.age, p2.phone);
+    
     struct Student s1 = {
         {{"Jane Jones"},
          {{"15 Elm St."},
@@ -61,11 +64,12 @@ int main(void)
          {"9056342890"},
          31},
         {45.7, 28.6},
-        23};
+        2};
 
     printf("(S1) %s is %d years old and has the phone %s and lives at %s, %s, %s, %s\n", s1.personInfo.name, s1.personInfo.age, s1.personInfo.phone,
            s1.personInfo.address.street, s1.personInfo.address.city, s1.personInfo.address.province,
            s1.personInfo.address.postCode);
+    
     printf("Marks: ");
     for (i = 0; i < s1.numMarks; i++)
     {
@@ -87,8 +91,11 @@ int main(void)
               29},
              {48.7, 32.6, 18, 0},
              3}};
+
     int numStudents = 2;
+
     printf("-- Class List--\n");
+
     for (i = 0; i < numStudents; i++)
     {
         printf("(myClass[i]) %s is %d years old and has the phone %s and lives at %s, %s, %s, %s\n", myClass[i].personInfo.name, myClass[i].personInfo.age, myClass[i].personInfo.phone, myClass[i].personInfo.address.street, myClass[i].personInfo.address.city, myClass[i].personInfo.address.province, myClass[i].personInfo.address.postCode);
