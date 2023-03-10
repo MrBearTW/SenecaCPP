@@ -2,46 +2,74 @@
 
 ## Hardware States
 
-Hardware States - Idle/Ready
+Initial Hardware States - Idle/Ready
+- Payment Module:       disabled
+- LCD Colour Screen:    enabled
+- Column/Row buttons:   disabled
+- “Enter” button:       enabled
+- “Correct” button:     disabled
+- “Cancel” button:      disabled
+- “Pay” button:         disabled
+
+---
+
+Initial Hardware States - Active
+- Payment Module:       disabled
+- LCD Colour Screen:    enabled
+- Column/Row buttons:   enabled
+- “Enter” button:       disabled
+- “Correct” button:     disabled
+- “Cancel” button:      enabled
+- “Pay” button:         disabled
+
+---
+
+Initial Hardware States - Payment
+- Payment Module:       enabled
+- LCD Colour Screen:    enabled
+- Column/Row buttons:   disabled
+- “Enter” button:       disabled
+- “Correct” button:     enabled
+- “Cancel” button:      enabled
+- “Pay” button:         disabled
+
+---
+
+Initial Hardware States - Cancel 
 - Payment Module: disabled
 - LCD Colour Screen: enabled
 - Column/Row buttons: disabled
-- “Enter” button: enabled
+- “Enter” button: disabled
 - “Correct” button: disabled
 - “Cancel” button: disabled
 - “Pay” button: disabled
 
-Hardware States - Active
-- Payment Module: disabled
-- LCD Colour Screen: enabled
-- Column/Row buttons: enabled
-- “Enter” button: disabled
-- “Correct” button: enabled
-- “Cancel” button: enabled
-- “Pay” button: enabled
-
-Hardware States - Payment
-- Payment Module: enabled
-- LCD Colour Screen: enabled
-- Column/Row buttons: disabled
-- “Enter” button: disabled
-- “Correct” button: enabled
-- “Cancel” button: enabled
-- “Pay” button: disabled
-
-Hardware States - Cancel 
-- Payment Module: disabled
-- LCD Colour Screen: enabled
-- Column/Row buttons: disabled
-- “Enter” button: disabled
-- “Correct” button: disabled
-- “Cancel” button: disabled
-- “Pay” button: disabled
-
-
-
-
-
-
+---
 
 ## Software Idle State
+
+1. Declare: 
+    oneAdTimeLimit = 30 sec
+    oneAdRunTime = 0
+    oneAdRunStart = 0
+    AdId = 0
+
+2. Start Ad broadcast
+    A) Start timer Set: oneAdRunStart = now
+    B) DISPLAY: AdId advertisement video
+    C) Prompt "Please press Enter to start" at LCD Colour Screen bottom.
+
+3. Calculate 
+    oneAdRunTime = (now - oneAdRunStart)
+
+4. Is oneAdTimeLimit < oneAdRunTime?
+    NO      Is customer press “Enter” button?
+                YES a) Change software to Active State
+                    b) Change Hardware States to Active
+                    c) End software Idle State
+                
+                NO  Repeat from step #3
+
+    YES     A) Switch to next advertisement video
+                update: AdId
+            B) Repeat from step #2
