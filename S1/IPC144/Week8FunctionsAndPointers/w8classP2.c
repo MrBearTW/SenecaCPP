@@ -15,6 +15,7 @@ void zero2(int *b)
     printf("zeroFun2 b = %d, n(b) = %x   |   ", b, b);
 }
 
+
 int main(void)
 {
     int n = 42;       // declare an int

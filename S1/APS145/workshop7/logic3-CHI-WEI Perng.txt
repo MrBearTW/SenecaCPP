@@ -1,0 +1,53 @@
+# APS145-NAA-W7-G2-M3 Logic 3
+
+## Monthly Member override billing process
+
+1. Override Start
+
+2. Received from main process
+    RECIEVES: orderInfo
+        washTypeChoice
+        memberSetWashType
+        carWashTodayCount
+        paymentAmount = 0
+        carWahsTypeCharge:Basic = 5.5
+        carWahsTypeCharge:Clean = 8.75
+        carWahsTypeCharge:SuperClean = 12.5
+
+3. Check whether members have washed their cars more than twice today?
+    carWashTodayCount >= 2 ?
+    YES:
+        Member selected washTypeChoice this time is ?
+            case washTypeChoice = Basic
+                SET: paymentAmount = carWahsTypeCharge:Basic(5.5)
+            case washTypeChoice = Clean
+                SET: paymentAmount = carWahsTypeCharge:Clean(8.75)
+            case washTypeChoice = Super Clean
+                SET: paymentAmount = carWahsTypeCharge:SuperClean(12.5)
+    NO:
+        A. The car wash option selected by the member is different from the pre-set by the member.
+            memberSetWashType != washTypeChoice
+        B. Member pre-set wash type is?
+            memberSetWashType = ?
+            1) memberSetWashType = Basic
+                Member washTypeChoice selected this time?
+                    case washTypeChoice = Clean
+                        SET: paymentAmount = carWahsTypeCharge:Clean(8.75)
+                    case washTypeChoice = Super Clean
+                        SET: paymentAmount = carWahsTypeCharge:SuperClean(12.5) 
+            2) memberSetWashType = Clean
+                Member washTypeChoice selected this time?
+                    case washTypeChoice = Basic
+                        SET: paymentAmount = carWahsTypeCharge:Basic(5.5)
+                    case washTypeChoice = Super Clean
+                        SET: paymentAmount = carWahsTypeCharge:SuperClean(12.5)  
+            3) memberSetWashType = Super Clean
+                Member washTypeChoice selected this time?
+                    case washTypeChoice = Basic
+                        SET: paymentAmount = carWahsTypeCharge:Basic(5.5)
+                    case washTypeChoice = Clean
+                        SET: paymentAmount = carWahsTypeCharge:Clean(8.75) 
+
+4. Return: orderInfo
+
+5. Override End

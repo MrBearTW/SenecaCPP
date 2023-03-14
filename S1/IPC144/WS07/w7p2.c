@@ -1,5 +1,5 @@
 /*/////////////////////////////////////////////////////////////////////////
-                          Workshop - #7 (P1)
+                          Workshop - #7 (P2)
 Full Name  :CHI-WEI PERNG
 Student ID#:121967228
 Email      :cperng@myseneca.ca
@@ -26,6 +26,7 @@ struct PlayerInfo
     int lives;
     int treasure;
     int history[MOVES_REMAINING];
+    int position;
 };
 
 struct GameInfo
@@ -34,13 +35,14 @@ struct GameInfo
     int pathlength;
     int bombs[MAX_PATH_LENGTH];
     int treasure[MAX_PATH_LENGTH];
+    int visited[MAX_PATH_LENGTH];
 };
 
 int main(void)
 {
     struct PlayerInfo p1 = {0};
     struct GameInfo g1 = {0};
-    int movesMax, movesMini, i;
+    int movesMax, movesMini, i, inputPosition;
 
     printf("================================\n");
     printf("         Treasure Hunt!\n");
@@ -131,7 +133,133 @@ int main(void)
     printf("====================================\n");
     printf("~ Get ready to play TREASURE HUNT! ~\n");
     printf("====================================\n");
-    printf("\n");
 
+    while (p1.lives != -1 && g1.moves != 0)
+    {
+        // print current board status
+        if (p1.lives >= 0)
+        {
+            printf("%c%c", 0, 0);
+            for (i = 1; i < g1.pathlength + 1; i++)
+            {
+                if (p1.position == i)
+                {
+                    printf("%c", p1.playerRepresent);
+                }
+                else
+                {
+                    printf("%c", 0);
+                }
+            }
+            printf("\n");
+            printf("  ");
+            for (i = 0; i < g1.pathlength; i++)
+            {
+                switch (g1.visited[i])
+                {
+                case 1:
+                    printf("!");
+                    break;
+                case 2:
+                    printf("$");
+                    break;
+                case 3:
+                    printf("&");
+                    break;
+                case 4:
+                    printf(".");
+                    break;
+
+                default:
+                    printf("-");
+                    break;
+                }
+            }
+            printf("\n");
+            printf("  ");
+            for (i = 1; i < g1.pathlength + 1; i++)
+            {
+                if (i % 10 == 0)
+                {
+                    printf("%d", i % 10);
+                }
+                else
+                {
+                    printf("|");
+                }
+            }
+            printf("\n");
+            printf("  ");
+            for (i = 1; i < g1.pathlength + 1; i++)
+            {
+                printf("%d", i % 10);
+            }
+            printf("\n");
+            printf("+---------------------------------------------------+\n");
+            printf("  Lives: %2d  | Treasures: %2d  |  Moves Remaining: %2d\n", p1.lives, p1.treasure, g1.moves);
+            printf("+---------------------------------------------------+\n");
+            // print last time
+            if (p1.lives == 0)
+            {
+                p1.lives--;
+            }
+        }
+        if (p1.lives > 0)
+        {
+            // print Next Move input
+            do
+            {
+                printf("Next Move [1-%d]: ", g1.pathlength);
+                scanf("%d", &inputPosition);
+                if (inputPosition < 1 || inputPosition > g1.pathlength)
+                {
+                    printf("  Out of Range!!!\n");
+                }
+            } while (inputPosition < 1 || inputPosition > g1.pathlength);
+            // print Next Move result
+            g1.moves--;
+            p1.position = inputPosition;
+            printf("\n");
+            if (g1.visited[p1.position - 1] == 4)
+            {
+                printf("===============> Dope! You've been here before!\n");
+            }
+            else
+            {
+                if (g1.bombs[p1.position - 1] == 1 && g1.treasure[p1.position - 1] == 1)
+                {
+                    printf("===============> [&] !!! BOOOOOM !!! [&]\n");
+                    printf("===============> [&] $$$ Life Insurance Payout!!! [&]\n");
+                    g1.visited[p1.position - 1] = 3;
+                    p1.lives--;
+                    p1.treasure++;
+                }
+                else if (g1.bombs[p1.position - 1] == 1)
+                {
+                    printf("===============> [!] !!! BOOOOOM !!! [!]\n");
+                    g1.visited[p1.position - 1] = 1;
+                    p1.lives--;
+                }
+                else if (g1.treasure[p1.position - 1] == 1)
+                {
+                    printf("===============> [$] $$$ Found Treasure! $$$ [$]\n");
+                    g1.visited[p1.position - 1] = 2;
+                    p1.treasure++;
+                }
+                else
+                {
+                    printf("===============> [.] ...Nothing found here... [.]\n");
+                    g1.visited[p1.position - 1] = 4;
+                }
+            }
+        }
+        printf("\n");
+    }
+    // print ending
+    printf("##################\n");
+    printf("#   Game over!   #\n");
+    printf("##################\n");
+    printf("\n");
+    printf("You should play again and try to beat your score!\n");
     return 0;
 }
