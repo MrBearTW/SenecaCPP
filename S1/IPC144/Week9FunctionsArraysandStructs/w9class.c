@@ -12,9 +12,9 @@ int main(void)
 
     printf("Employee %d: %s\n", emp1.employeeID, emp1.personInfo.name);
 
-    //addPay(&emp1, 99.99);
-    //printEmployee(&emp1);
-    //printf("/n");
+    addPay(&emp1, 99.99);
+    printEmployee(&emp1);
+    printf("/n");
 
     return 0;
 }

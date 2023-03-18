@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 #include "Header.h" // "" --> searching folder
 
 void setName(struct Employee *emp, char name[])
@@ -10,27 +12,26 @@ void setName(struct Employee *emp, char name[])
     }
 
     emp->personInfo.name[i] = '\0'; // shortcut to acess struct member
-/*
-    int addToArry(double ar[], double value, int size)
-    {
-        ar[size] = value;
-        return size + 1;
-    }
+}
+int addToArry(double ar[], double value, int size)
+{
+    ar[size] = value;
+    return size + 1;
+}
 
-    void addPay(struct Employee * emp, double pay)
-    {
-        // emp->pays[emp->numPays++] = pay;
-        emp->numPays = addToArry(emp->pays, pay, emp->numPays);
-    }
-    
-        void printEmployee(const struct Employee *emp)
-        {
-            int i;
-            print("%s (%d): ", emp->personInfo.name, emp->employeeID);
+void addPay(struct Employee *emp, double pay)
+{
+    // emp->pays[emp->numPays++] = pay;
+    emp->numPays = addToArry(emp->pays, pay, emp->numPays);
+}
 
-            for (i = 0; i < emp->numPays; i++)
-            {
-                printf("%.2f", emp->)
-            }
-            }*/
+void printEmployee(const struct Employee *emp)
+{
+    int i;
+    printf("%s (%d): ", emp->personInfo.name, emp->employeeID);
+
+    for (i = 0; i < emp->numPays; i++)
+    {
+        printf("%.2lf ", emp->pays[i]);
+    }
 }
