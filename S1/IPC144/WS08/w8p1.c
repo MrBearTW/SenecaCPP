@@ -75,7 +75,7 @@ void openingMessage(const int numberNeedEntering)
 // 4. Get user input for the details of cat food product
 struct CatFoodInfo getCatFoodInfo(const int catFoodNum)
 {
-	struct CatFoodInfo input;
+	struct CatFoodInfo input = {0};
 	printf("Cat Food Product #%d\n", catFoodNum+1);
 	printf("--------------------\n");
 	printf("SKU           : ");
