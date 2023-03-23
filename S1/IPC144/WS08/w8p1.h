@@ -11,8 +11,12 @@ shared with any other student or 3rd party content provider. This submitted
 piece of work is entirely of my own creation.
 /////////////////////////////////////////////////////////////////////////*/
 
+#ifndef MAX_NUM_PRODUCT SERVING_GRAMS
+
 #define MAX_NUM_PRODUCT 3
 #define SERVING_GRAMS 64
+
+#endif
 
 // ----------------------------------------------------------------------------
 // structures

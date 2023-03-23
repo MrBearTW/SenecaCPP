@@ -9,3 +9,46 @@ I declare this submission is the result of my own work and has not been
 shared with any other student or 3rd party content provider. This submitted
 piece of work is entirely of my own creation.
 ///////////////////////////////////////////////////////////////////////////
+
+1. Several helper functions were designed to return values in two different ways (via an argument and/or by return). Explain at least one benefit of this “feature” and how it increases usability/flexibility and at least one negative reason why having functions designed to work in this way may not be desirable.
+
+Ans: 
+One benefit of having helper functions designed to return values in two separate ways is that it increases the flexibility of the function. Another benefit is if use “via an argument “this can save some memory space; this is useful when it is extremely limited memory. One negative reason is that it can make the function more difficult to understand and take twice as much effort on one function. 
+
+
+2. According to the design principles for structured design, functions should be highly cohesive and have low coupling. Identify one function in the workshop that demonstrates less than perfect cohesion, and one function that demonstrates coupling that could be improved. For each identified function, briefly explain what you would do to improve them.
+
+Ans:
+For example, “getIntPositive” and “getDoublePositive” this function is responsible for both getting the user’s input and validating it. They both have validating is not NULL part, this can combine use same code block to validate it. 
+
+
+
+3. What advantages are there in passing structures to functions? Based on your readings this week (for next week’s topics) what could be done in the passing of this data to functions to make it more efficient? Explain how the “displayCatfoodData” function could be improved.
+
+Ans:
+Passing structures to function is it can make the code more simple and easier to understand is an advantage. Fnction “displayCatFoodData”  can just send “struct  catFoodInfo” pointer to the function instead of passing four different variables to a function. By grouping “catFoodInfo” data together in a structure, it becomes easier to pass that data to functions that need it. 
+
+ 
+
+
+
+PS. 
+I have some problems with function 14 calculateReportData. 
+
+In workshop PDF P.8   No.8 
+
+  - Receives an address to an unmodifiable double floating-point data type representing the total number of calories 
+
+  
+In workshop PDF P.10   No.14 
+
+  - All the data required for the calculations is at your disposal either via the 1st argument, or the values already calculated and stored to the ReportData variable 
+
+
+But we do not have "total number of calories" variable in struct ReportData. 
+
+Function 14 calculateReportData can be use   
+
+  costCaloriesPerServing = costPerServing / SERVING_GRAMS 
+
+without creating new variable in function 14
