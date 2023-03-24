@@ -114,11 +114,12 @@ void inputCString(char *aCstring, int minimumNumberofCharacters, int maximumNumb
     while (inTheRange == 0)
     {
         inputNumber = 0;
-        scanf("%s", input);
+        scanf("%[^\n]", input);
         for (i = 0; input[i] != '\0'; i++)
         {
             inputNumber++;
         }
+
         if (inputNumber <= maximumNumberofCharacters && inputNumber >= minimumNumberofCharacters)
         {
             inTheRange = 1;
@@ -133,7 +134,11 @@ void inputCString(char *aCstring, int minimumNumberofCharacters, int maximumNumb
         {
             if (maximumNumberofCharacters == minimumNumberofCharacters)
             {
-                printf("ERROR: String length must be exactly %d chars:", maximumNumberofCharacters);
+                printf("ERROR: String length must be exactly %d chars: ", maximumNumberofCharacters);
+            }
+            else if (inputNumber > maximumNumberofCharacters)
+            {
+                printf("ERROR: String length must be no more than %d chars: ", maximumNumberofCharacters);
             }
             else
             {
