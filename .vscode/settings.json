@@ -7,6 +7,8 @@
         "cstdlib": "c",
         "locale": "c",
         "ostream": "c",
-        "new": "c"
+        "new": "c",
+        "__locale": "c",
+        "cctype": "c"
     }
 }

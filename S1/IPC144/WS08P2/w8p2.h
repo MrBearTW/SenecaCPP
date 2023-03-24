@@ -11,9 +11,12 @@ shared with any other student or 3rd party content provider. This submitted
 piece of work is entirely of my own creation.
 /////////////////////////////////////////////////////////////////////////*/
 
+#ifndef W8P2_H
+#define W8P2_H
+
 // ----------------------------------------------------------------------------
 // defines/macros
-#ifndef MAX_NUM_PRODUCT MAX_NUM_PRODUCT LBSKG LBSG LBS
+
 
 #define MAX_NUM_PRODUCT 3
 #define SERVING_GRAMS 64
@@ -21,7 +24,7 @@ piece of work is entirely of my own creation.
 #define LBSG 2494
 #define LBS 5.5
 
-#endif
+
 
 // ----------------------------------------------------------------------------
 // structures
@@ -107,3 +110,5 @@ void displayFinalAnalysis(const struct CatFoodInfo catFoodInfo);
 
 // 7. Logic entry point
 void start(void);
+
+#endif
