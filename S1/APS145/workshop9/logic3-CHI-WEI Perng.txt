@@ -1,0 +1,96 @@
+# APS145-NAA-W9-G2-M3 Logic 3
+
+## ExploreRoom-B
+
+1. ExploreRoom-B Start
+
+2. Declare variables:
+    letterGuessesTime = 8
+    guessWordAnswer = []
+    guessWordAnswerLetterCount = 0
+    playerInputWord = []
+    guessWordResult = 0
+    playerInputLetter = []
+    guessLetterResult = -1
+    revealedLetters = []
+    useTime = 0
+
+3. Display:
+    "Welcom to Hang-Person!"
+
+4. Produced this time guess word.
+    A. Call Blackbox function: GenerateWord
+    B. guessWordAnswer = GenerateWord()
+    C. guessWordAnswerLetterCount = length of guessWordAnswer
+    D. Set revealedLetters = "_" * guessWordAnswerLetterCount
+
+5. Display: 
+    A. Display: This time guess word length is X letter. (X = guessWordAnswerLetterCount)
+    B. Display: revealedLetters
+    C. Display: You have Y time can guess letter. (Y = letterGuessesTime)
+
+6. Check letterGuessesTime?
+    Case: letterGuessesTime > 0
+        Display: Do you want to guess a word?
+            Yes: 
+                A. Display: Please enter yoour guess word.
+                B. playerInputWord = Player enter word.
+                C. Call Blackbox function: GuessWord
+                D. guessWordResult = GuessWord(playerInputWord)
+                E. guessWordResult = ?
+                    Case 0: Did not match
+                        1) useTime = useTime + 20
+                        2) Go to step #8
+                    Case 1: Matched
+                        1) useTime = useTime + 2
+                        2) Go to step #9
+            No: Goto Step #7
+    Case: letterGuessesTime = 0
+        Display: This is your final time to guess word?
+            A. Display: Please enter yoour guess word.
+            B. playerInputWord = Player enter word.
+            D. Call GuessWord()
+            E. guessWordResult = GuessWord(playerInputWord)
+            F. guessWordResult = ?
+                Case 0: Did not match
+                    1) useTime = useTime + 25
+                    2) Go to steap #8
+                Case 1: Matched
+                    1) useTime = useTime + 5
+                    2) Go to steap #9 
+
+7. Guess Letter
+    A. useTime = useTime + 3
+    B. Display: Please guess a letter?
+    C. playerInputLetter = Player enter letter.
+    D. Call Blackbox function: GuessLetter 
+    E. guessLetterResult = GuessLetter(playerInputLetter)
+    F. guessLetterResult result ?
+        Case 1: Guesses a letter correctly
+            1) letterGuessesTime = letterGuessesTime + 1
+            2) useTime = useTime + 3
+            3) Update revealedLetters. Change "_" to guesses letter.
+            4) Return to step #5
+        Case -1: The letter was not contained in the secret word
+            1) letterGuessesTime = letterGuessesTime + 1
+            2) useTime = useTime + 6
+            3) Return to step #5
+        Case 0: Guesses a letter which reveals the word
+            1) useTime = useTime + 2
+            2) Go to step #9
+
+8. Display: Sorry you didn't guess right!
+    A. letterGuessesTime > 0 ?
+        YES:
+            Return to step #5
+    B. Return useTime to main process.
+    C. Gi to step #10
+
+9. Display: Congratulations you guessed it right! 
+    B. Return useTime to main process.
+
+10. ExploreRoom-B End
+
+
+
+
