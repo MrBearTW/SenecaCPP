@@ -114,7 +114,7 @@ void inputCString(char *aCstring, int minimumNumberofCharacters, int maximumNumb
     while (inTheRange == 0)
     {
         inputNumber = 0;
-        scanf("%[^\n]", input);
+        scanf("%99[^\n]", input);
         for (i = 0; input[i] != '\0'; i++)
         {
             inputNumber++;
