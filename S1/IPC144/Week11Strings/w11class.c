@@ -29,8 +29,6 @@ int validPostalCode(const char pc[])
                     result = isdigit(pc[i]);
                     alpha = !alpha;
                     break;
-                default:
-                    break;
                 }
             }
         }
@@ -41,11 +39,10 @@ int validPostalCode(const char pc[])
 void formatPostalCode(const char pc[], char formatted[])
 {
     int i, len = strlen(pc), fmtPtr = 0, start = 0;
-    for (i = 0; i < len; i++)
+    for (i = 0; i < 3; i++)
     {
         formatted[fmtPtr++] = toupper(pc[i]);
     }
-
     if (pc[3] == ' ')
     {
         formatted[fmtPtr++] = ' ';
@@ -70,7 +67,7 @@ void strip(char s[])
     {
         int len = strlen(s);
         int i, j;
-        for (i = len - 1; i >= 0 && isspace(s[i]); i--)
+        for (i = (len - 1); i >= 0 && isspace(s[i]); i--)
         {
             len--;
         }
@@ -138,9 +135,9 @@ void formatMessage(char fmtStr[], const char insert[])
             char tmp[100] = {0};
             strcpy(tmp, fmtStr + i + 1);
             fmtStr[i] = '\0';
+            strcat(fmtStr, insert);
+            strcat(fmtStr, );
         }
-        strcat(fmtStr, insert);
-        strcat(fmtStr, );
     }
 }
 
@@ -180,7 +177,7 @@ int main(void)
     }
     printf("\n");
 
-    char fmtStr[100]= {"I ate $ for dinner"};
+    char fmtStr[100] = {"I ate $ for dinner"};
     formatMessage(fmtStr, "fish");
     printf("The formatted string is %s\n", fmtStr);
 
