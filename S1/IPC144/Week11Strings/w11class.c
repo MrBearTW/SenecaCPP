@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 
@@ -19,14 +20,14 @@ int validPostalCode(const char pc[])
                 {
                 case 0:
                     result = isdigit(pc[i]) || (i == 3 && isspace(pc[i]));
-                    if (!(isdigit(pc[i]) || (i == 3 && isspace(pc[i]))))
+                    if (!(i == 3 && isspace(pc[i])))
                     {
                         alpha = !alpha;
                     }
                     break;
 
                 case 1:
-                    result = isdigit(pc[i]);
+                    result = isalpha(pc[i]);
                     alpha = !alpha;
                     break;
                 }
@@ -93,13 +94,12 @@ void strip(char s[])
 int getNumbers(const char s[], int numbers[])
 {
     char buf[16] = {0};
-    int bufPt = 0, result = 0;
+    int bufPt = 0,inNumber = 0, result = 0;
 
     if (s != NULL)
     {
         int len = strlen(s);
         int i;
-        int inNumber = 0;
         for (i = 0; i < len; i++)
         {
             if (isdigit(s[i]))
@@ -136,7 +136,7 @@ void formatMessage(char fmtStr[], const char insert[])
             strcpy(tmp, fmtStr + i + 1);
             fmtStr[i] = '\0';
             strcat(fmtStr, insert);
-            strcat(fmtStr, );
+            strcat(fmtStr, tmp);
         }
     }
 }
@@ -170,10 +170,10 @@ int main(void)
     printf("Stripped = \'%s\'\n", leadTrail1);
 
     n = getNumbers(strWithNums, numbers);
-    printf("The number are: ");
+    printf("The numbers are: ");
     for (i = 0; i < n; i++)
     {
-        printf("%d", numbers[i]);
+        printf("%d ", numbers[i]);
     }
     printf("\n");
 

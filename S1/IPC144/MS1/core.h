@@ -16,10 +16,6 @@ piece of work is entirely of my own creation.
 
 #define _CRT_SECURE_NO_WARNINGS
 
-// #ifndef
-
-// #endif
-
 // Clear the standard input buffer void clearInputBuffer(void);
 void clearInputBuffer(void);
 
