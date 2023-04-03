@@ -9,6 +9,7 @@
         "ostream": "c",
         "new": "c",
         "__locale": "c",
-        "cctype": "c"
+        "cctype": "c",
+        "cstdio": "c"
     }
 }
