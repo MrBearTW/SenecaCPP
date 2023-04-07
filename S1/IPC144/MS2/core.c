@@ -14,7 +14,8 @@ piece of work is entirely of my own creation.
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
-
+#include <string.h>
+#include <ctype.h>
 //
 // Copy your work done from Milestone #1 (core.c) into this file
 // - Organize your functions in the same order as they are listed in the core.h file
@@ -115,26 +116,36 @@ char inputCharOption(const char optionCstring[])
 void inputCString(char *aCstring, int minimumNumberofCharacters, int maximumNumberofCharacters)
 {
     char input[100] = {0};
-    int i, j = 0, inputNumber, inTheRange = 0;
+    int inputNumber, inTheRange = 0;
 
     while (inTheRange == 0)
     {
         inputNumber = 0;
         scanf("%99[^\n]", input);
-        for (i = 0; input[i] != '\0'; i++)
-        {
-            inputNumber++;
-        }
+
+        // MS1
+        // int i, j = 0;
+        // for (i = 0; input[i] != '\0'; i++)
+        // {
+        //     inputNumber++;
+        // }
+
+        // MS2
+        inputNumber = strlen(input);
 
         if (inputNumber <= maximumNumberofCharacters && inputNumber >= minimumNumberofCharacters)
         {
             inTheRange = 1;
-            while (input[j] != '\0')
-            {
-                aCstring[j] = input[j];
-                j++;
-            }
-            aCstring[j] = '\0';
+            // MS1
+            // while (input[j] != '\0')
+            // {
+            //     aCstring[j] = input[j];
+            //     j++;
+            // }
+            // aCstring[j] = '\0';
+
+            // MS2
+            strcpy(aCstring, input);
         }
         else
         {
@@ -162,14 +173,20 @@ void displayFormattedPhone(const char *phoneString)
     // it is exactly 10 characters long
     if (phoneString != NULL)
     {
-        for (i = 0; phoneString[i] != '\0'; i++)
-        {
-            argumentCount++;
-        }
+        // MS1
+        // for (i = 0; phoneString[i] != '\0'; i++)
+        // {
+        //     argumentCount++;
+        // }
+
+        // MS2
+        argumentCount = strlen(phoneString);
+
         // only contains digits (0-9)
         for (i = 0; phoneString[i] != '\0'; i++)
         {
-            if (phoneString[i] < '0' || phoneString[i] > '9')
+            // if (phoneString[i] < '0' || phoneString[i] > '9')     // MS1
+            if (!isdigit(phoneString[i])) // MS2
             {
                 isNotDigit = 1;
             }

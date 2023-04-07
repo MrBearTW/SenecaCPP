@@ -319,16 +319,16 @@ void removePatient(struct Patient patient[], int max)
         scanf(" %c", &yesNo);
         if (yesNo == 'n')
         {
-            printf("Operation aborted.\n\n");
+            puts("Operation aborted.\n");
         }
         else if (yesNo == 'y')
         {
             patient[i].patientNumber = 0;
-            printf("Patient record has been removed!\n\n");
+            puts("Patient record has been removed!\n");
         }
         else
         {
-            printf("Error!\n\n");
+            puts("Error!\n");
         }
     }
     clearInputBuffer();
@@ -353,7 +353,7 @@ void searchPatientByPatientNumber(const struct Patient patient[], int max)
     }
     else
     {
-        printf("*** No records found ***\n");
+        puts("*** No records found ***");
     }
     printf("\n");
 }
@@ -381,7 +381,7 @@ void searchPatientByPhoneNumber(const struct Patient patient[], int max)
     if (find == 0)
     {
         printf("\n");
-        printf("*** No records found ***\n");
+        puts("*** No records found ***");
     }
     printf("\n");
 }
@@ -469,7 +469,7 @@ void inputPhoneData(struct Phone *phone)
         break;
 
     default:
-        printf("Error!\n");
+        puts("Error!");
         break;
     }
     if (choice == 1 || choice == 2 || choice == 3)
