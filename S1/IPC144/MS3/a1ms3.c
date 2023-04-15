@@ -1,11 +1,11 @@
 // ############################################################################
 //
-//  Assignment:  1 
+//  Assignment:  1
 //  Milestone:   3
 //  Description: Main Application Entry Point
 //
 // +---------------------------------------------------------+
-// | *** The contents of this file is NOT to be modified *** |    
+// | *** The contents of this file is NOT to be modified *** |
 // +---------------------------------------------------------+
 //
 // ############################################################################
@@ -19,9 +19,9 @@
 
 int main(void)
 {
-    struct Patient pets[MAX_PETS] = { {0} };
-    struct Appointment appoints[MAX_APPOINTMENTS] = { {0} };
-    struct ClinicData data = { pets, MAX_PETS, appoints, MAX_APPOINTMENTS };
+    struct Patient pets[MAX_PETS] = {{0}};
+    struct Appointment appoints[MAX_APPOINTMENTS] = {{0}};
+    struct ClinicData data = {pets, MAX_PETS, appoints, MAX_APPOINTMENTS};
 
     int patientCount = importPatients("patientData.txt", pets, MAX_PETS);
     int appointmentCount = importAppointments("appointmentData.txt", appoints, MAX_APPOINTMENTS);
@@ -30,6 +30,6 @@ int main(void)
     printf("Imported %d appointment records...\n\n", appointmentCount);
 
     menuMain(&data);
-    
+
     return 0;
 }

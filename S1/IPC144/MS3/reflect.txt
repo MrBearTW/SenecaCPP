@@ -1,0 +1,70 @@
+///////////////////////////////////////////////////////////////////////////
+                               Reflection
+                        Assignment 1 - Milestone 3
+Full Name  :CHI-WEI PERNG
+Student ID#:121967228
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+1. 
+
+The three functions I built are as follows 
+
+- getDate 
+- GetPatientIndex 
+- sort 
+
+In my very first version of the code, I wrote all the code in order, this makes the whole code very long and repetitive. I did not add any new functions except requirement demand. After completing the first version and being able to successfully execute the project fit requirements with input and output same as “a1ms3_output.txt”. I found that some of the codes are repeated, so I abstracted these repeated parts and wrote them as functions. This reduces duplication. 
+
+ 
+// Get Date 
+void getDate(struct Date *date); 
+
+This function is used 3 times in the code. This function can read the input entered by the user, and match the year, month, and day in sequence. Determine which day is the last day of each month according to the year and month what user just enter, including the part that handles leap years for February. 
+
+ 
+// Get Patient Index in patient array 
+void getPatientIndex(struct Patient *patient, int max, int *patientIndex); 
+
+This function is used 2 times in the code. This function can read the number entered by the user, and then use the patient number to check patient exit. After that query the position of the patient in the array. If the patient does not exit it will return –1. 
+
+
+// Sor Appointment array 
+void sort(struct Appointment appoints[]，int max); 
+
+This function is used 2 times in the code. This function sorts the array of reservations. After converting all the years, months, and days into minutes, arrange them from small to large. That is, the earlier the date, the earlier it will be placed. After the sort is complete, restore the minutes to their original minutes. 
+
+ 
+After extracting these functions, the code is indeed much shorter. When creating these functions, I also reviewed two different ways of”Pass-by-Value“and“Pass-by-Address”. 
+
+
+
+2. 
+
+After seeing this question, I went back and searched the “clinic.c” file and I was using “scanf” four times. So, I started to try to reduce the use of “scanf” and replace it with the functions in core.h. The “scanf” function is used to read input from standard input. 
+Using %s to get a string from the user, which leads to the possibility that the input may be longer than you are setting. Therefore, remember to call "clearInputBuffer" to clear when using scanf. But it is highly likely to forget when writing the code, so use the wrapped function to avoid forgetting to call "clearInputBuffer" and other protect.
+
+When I replace "scanf", it will cause some typographical differences. There is no problem when using "scanf" originally, but when I replace it with a packaged function, there will be one more blank line, or one less blank line, or is there is no newline and so on different problems. I spent a lot of time tweaking these few details.  
+
+
+
+
+3. 
+
+void sort(struct Appointment appoints[], int max);  -->  DISPLAY FUNCTIONS 
+
+I chose to put "sort" in the DISPLAY FUNCTIONS category. Because this action of sorting patients is related to display. In the “a1ms3_output.txt”, we can see that this is in chronological order, from the more recent time to the farther time. This is different from the file we originally read, so we need to sort the incoming appointments so that they can be the same as in the “a1ms3_output.txt”. 
+
+ 
+void getPatientIndex(struct Patient *patient, int max, int *patientIndex);  -->  UTILITY FUNCTIONS 
+
+I chose to put "getPatientIndex" in the category of UTILITY FUNCTIONS. Because after reading the number entered by the user, it is necessary to query which index the patient is in the array we operate. This function of searching for an index is a function commonly used in editing and deleting patient data, so I put "getPatientIndex" in the category of UTILITY FUNCTIONS. 
+
+ 
+void getDate(struct Date *date);  -->  USER INPUT FUNCTIONS 
+
+I chose to put "getDate" in the category of INPUT FUNCTIONS. This function is used when querying appointments on a certain date and when creating a new appointment. This function allows users to input the data of the year, month, and day, so I put "getDate" in the category of INPUT FUNCTIONS. 

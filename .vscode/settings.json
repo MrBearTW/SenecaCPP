@@ -10,6 +10,10 @@
         "new": "c",
         "__locale": "c",
         "cctype": "c",
-        "cstdio": "c"
+        "cstdio": "c",
+        "ios": "c",
+        "limits": "c",
+        "ratio": "c",
+        "algorithm": "c"
     }
 }
