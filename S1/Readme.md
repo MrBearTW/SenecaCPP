@@ -2,6 +2,7 @@
 
 ## IPC144
 
+- Teach basic C language
 
 ## ULI101
 
