@@ -29,4 +29,4 @@
 
 ## CPR101   Computer Principles for Programmers
 
-- Introduce some qualities you need to know to become a professional engineer. 
+- Introduce some qualities you need to know to become a professional engineer.
