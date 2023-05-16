@@ -34,7 +34,10 @@ int endsWith(const char s[], const char suffix[])
     int sz = strlen(s);
     int slen = strlen(suffix);
 
-    return 0 == strcmp(s + slen - sz, suffix);
+    puts(s + sz - slen);
+
+    // return 0 == strcmp(s + slen - sz, suffix);   // Origin (Wrong)
+    return 0 == strcmp(s + sz - slen, suffix);      // Correct
 }
 
 int main(void)
@@ -46,3 +49,9 @@ int main(void)
     printf("%s does %s end with %s\n", s1, endsWith(s1, suffix) ? "" : " not", suffix);
     return 0;
 }
+
+/*
+// return 0 == strcmp(s + slen - sz, suffix);   // Origin (Wrong)
+    return 0 == strcmp(s + sz - slen, suffix);      // Correct
+*/
+    
