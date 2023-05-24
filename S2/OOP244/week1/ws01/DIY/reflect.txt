@@ -1,0 +1,64 @@
+/*/////////////////////////////////////////////////////////////////////////
+                            Workshop 1 Part 2
+Full Name  :CHI-WEI PERNG
+Email      :cperng@myseneca.ca
+Student ID#:121967228
+Section    :NGG
+Date       :2023/05/22
+
+/////////////////////////////////////////////////////////////////////////*/
+
+# Reflection
+
+The "boolean" and "nullptr" that are only available in C++ are used in this workshop.
+
+I think this workshop is all the functions in string.h, so I want to find out the source code for reference. But I didn't find it on the website https://cplusplus.com/.
+
+After using the search engine, mainly refer to these three sources
+1. https://android.googlesource.com
+2. https://opensource.apple.com/
+3. https://codebrowser.dev/
+After roughly reading the code writing methods of these websites, it is found that the implementation of this string function of the three websites is not exactly the same. After referring to some of these examples, I wrote my version.
+
+Some of the parts that use break should not comply with Seneca's regulations, so they need to be rewritten.
+
+
+
+# reference:
+strLen
+https://android.googlesource.com/platform/bionic/+/a27d2baa/libc/string/strlen.c
+https://codebrowser.dev/glibc/glibc/string/strlen.c.html
+https://opensource.apple.com/source/Libc/Libc-262/i386/gen/strlen.c.auto.html
+https://en.cppreference.com/w/cpp/string/byte/strlen
+
+strCpy
+https://android.googlesource.com/platform/bionic/+/a27d2baa/libc/string/strcpy.c
+https://opensource.apple.com/source/Libc/Libc-262/i386/gen/strcpy.c.auto.html
+https://codebrowser.dev/glibc/glibc/string/strcpy.c.html#strcpy
+
+strnCpy
+https://android.googlesource.com/platform/bionic/+/ics-mr0/libc/string/strncpy.c
+https://opensource.apple.com/source/Libc/Libc-262/i386/gen/strncpy.c.auto.html
+https://codebrowser.dev/glibc/glibc/string/strncpy.c.html
+
+strCmp
+https://android.googlesource.com/platform/bionic/+/a27d2baa/libc/string/strcmp.c
+https://codebrowser.dev/glibc/glibc/string/strcmp.c.html
+https://opensource.apple.com/source/xnu/xnu-2782.30.5/libsyscall/wrappers/string/strcmp.c.auto.html
+
+strnCmp
+https://android.googlesource.com/platform/bionic/+/9248d3a/libc/string/strncmp.c
+https://codebrowser.dev/glibc/glibc/string/strncmp.c.html
+https://opensource.apple.com/source/Libc/Libc-167/gen.subproj/i386.subproj/strncmp.c.auto.html
+
+strStr
+https://android.googlesource.com/platform/bionic/+/ics-mr0/libc/string/strstr.c
+https://codebrowser.dev/glibc/glibc/string/strstr.c.html
+https://opensource.apple.com/source/tcl/tcl-14/tcl/compat/strstr.c.auto.html
+
+strCat
+https://opensource.apple.com/source/Libc/Libc-262/i386/gen/strcat.c.auto.html
+https://opensource.apple.com/source/Libc/Libc-262/i386/gen/strcat.c.auto.html
+https://codebrowser.dev/glibc/glibc/string/strcat.c.html
+
+https://github.com/jjaykim/OOP244-Language-CPP/blob/main/WS01/DIY/cstring.cpp
