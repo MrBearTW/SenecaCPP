@@ -1,0 +1,22 @@
+/*/////////////////////////////////////////////////////////////////////////
+                            Workshop 2 Part 2
+Full Name  :CHI-WEI PERNG
+Email      :cperng@myseneca.ca
+Student ID#:121967228
+Section    :NGG
+Date       :2023/05/30
+
+/////////////////////////////////////////////////////////////////////////*/
+
+As required in the workshop, use 
+- Unction overloading: 
+    - read: Read char* postcode. / Read int population.
+    - load: Loads data from a file. / Load one row.
+    - display: Display all with no parameters. / Display one row.
+- Reference: read / load / display 
+- Dynamic memory allocation: 
+    - function load() -> when create new struct to load all data. 
+    - function load() -> create new char array for postcode.
+		- Although the postcode in the " PCpopulationsComplete.csv” seems to all be three characters, it should be seven characters in general, such as school address "M2J 2X5". 
+
+In addition, I wrote a sorting method myself at the beginning, but when I compared the correct answer after uploading the matrix, I found that it was different from the correct answer. Later, after being reminded by my classmates, I realized that there would be no problem with the ws01 sorting method. 
