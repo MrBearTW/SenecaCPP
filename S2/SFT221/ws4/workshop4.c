@@ -32,7 +32,7 @@ int main(void)
     for (i = 0; i < NUM_FACTS; i++)
     {
         results.results[i] = reduceFactorial(results.results[i]);
-        printf("%5d %12f\n", i, results.results[i]);
+        printf("%5d %12d\n", i, results.results[i]);
     }
     return 0;
 }
