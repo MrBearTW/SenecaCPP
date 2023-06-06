@@ -8,9 +8,9 @@
  *
  * Please update the following with your information:
  *
- *      Name: <YOUR_NAME>
- *      Student ID: <YOUR_STUDENT_ID>
- *      Date: <SUBMISSION_DATE>
+ *      Name: CHI-WEI PERNG
+ *      Student ID: 121967228
+ *      Date: 2023 JUN 05
  *
  * Please see all unit tests in the files problem-00.test.js, problem-01.test.js, etc.
  */
@@ -104,7 +104,7 @@
  ******************************************************************************/
 
 function greeting(name) {
-  return `Hello ${name}`;
+  return `Hello ${name}!`;
 }
 
 /*******************************************************************************
@@ -132,8 +132,20 @@ function greeting(name) {
  * @return {string} - the converted camelCase version of the variable name
  ******************************************************************************/
 
-function toCamelCase(name, uppercase) {
-  // Replace this comment with your code...
+function toCamelCase(name, uppercase = false) {
+  let words = name.split(/[_\s]+/);
+  let result = words[0].toLowerCase();
+  let i = 1;
+  while (i < words.length) {
+    let word = words[i];
+    let capitalizedWord = word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    result += capitalizedWord;
+    i++;
+  }
+  if (uppercase) {
+    return result.charAt(0).toUpperCase() + result.slice(1);
+  }
+  return result;
 }
 
 /*******************************************************************************
@@ -184,7 +196,14 @@ function toCamelCase(name, uppercase) {
  ******************************************************************************/
 
 function createMetaTag(name, content) {
-  // Replace this comment with your code...
+  function cleanUp(customString) {
+    customString = customString.trim();
+    if (customString.includes('\t') || customString.includes(' ') || customString.includes('\n')) {
+      customString = `"${customString}"`;
+    }
+    return customString;
+  }
+  return `<meta name=${cleanUp(name)} content=${cleanUp(content)}>`;
 }
 
 /*******************************************************************************
@@ -235,7 +254,43 @@ function createMetaTag(name, content) {
  ******************************************************************************/
 
 function parseDateString(value) {
-  // Replace this comment with your code...
+  if (typeof value === 'undefined') {
+    throw new Error(
+      'invalid date string, expected a `YYYY-MM-DD` or `DD-MM-YYYY` formatted string'
+    );
+  }
+  const dateRegex = /(\d{4})-(\d{2})-(\d{2})|(\d{2})-(\d{2})-(\d{4})/;
+  const match = value.match(dateRegex);
+  if (!match) {
+    throw new Error(
+      'invalid date string, expected a `YYYY-MM-DD` or `DD-MM-YYYY` formatted string'
+    );
+  }
+  var year;
+  var month;
+  var day;
+
+  const dateRegex2 = /(\d{4})-(\d{2})-(\d{2})/;
+  const dateRegex3 = /(\d{2})-(\d{2})-(\d{4})/;
+  const match2 = value.match(dateRegex2);
+  const match3 = value.match(dateRegex3);
+
+  if (match2) {
+    year = match2[1];
+    month = match2[2];
+    day = match2[3];
+  }
+
+  if (match3) {
+    day = match3[1];
+    month = match3[2];
+    year = match3[3];
+  }
+  const date = new Date();
+  date.setFullYear(year);
+  date.setMonth(month - 1);
+  date.setDate(day);
+  return date;
 }
 
 /*******************************************************************************
@@ -276,7 +331,27 @@ function parseDateString(value) {
  ******************************************************************************/
 
 function toDateString(value, format) {
-  // Replace this comment with your code...
+  if (!(value instanceof Date)) {
+    throw new Error('Invalid date object');
+  }
+
+  let year = value.getFullYear();
+  let month = value.getMonth() + 1;
+  let day = value.getDate();
+
+  if (isNaN(year) || isNaN(month) || isNaN(day)) {
+    throw new Error('Invalid date object');
+  }
+
+  if (format === 'YYYY-MM-DD') {
+    return `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+  } else if (format === 'DD-MM-YYYY') {
+    return `${day.toString().padStart(2, '0')}-${month.toString().padStart(2, '0')}-${year}`;
+  } else if (format === 'MM-DD-YYYY') {
+    return `${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}-${year}`;
+  }
+
+  throw new Error('Invalid date format');
 }
 
 /*******************************************************************************
@@ -317,7 +392,45 @@ function toDateString(value, format) {
  */
 
 function normalizeDuration(value) {
-  // Replace this comment with your code...
+  const regex = /^(\d+)([h])(\d+)([m])(\d+)([s])$/;
+
+  const regex2 = /^(\d+)([:])(\d+)([:])(\d+)$/;
+
+  const match = value.match(regex);
+  const match2 = value.match(regex2);
+  let hours = 0;
+  let minutes = 0;
+  let seconds = 0;
+  if (match) {
+    hours = parseInt(match[1].replace('h', ''));
+    minutes = parseInt(match[3].replace('m', ''));
+    seconds = parseInt(match[5].replace('s', ''));
+
+    if (isNaN(hours) || isNaN(minutes) || isNaN(seconds)) {
+      return null;
+    }
+
+    if (hours < 0 || hours > 24 || minutes < 0 || minutes > 59 || seconds < 0 || seconds > 59) {
+      return null;
+    }
+
+    return `(${hours}, ${minutes}, ${seconds})`;
+  } else if (match2) {
+    hours = parseInt(match2[1]);
+    minutes = parseInt(match2[3]);
+    seconds = parseInt(match2[5]);
+
+    if (isNaN(hours) || isNaN(minutes) || isNaN(seconds)) {
+      return null;
+    }
+
+    if (hours < 0 || hours > 24 || minutes < 0 || minutes > 59 || seconds < 0 || seconds > 59) {
+      return null;
+    }
+
+    return `(${hours}, ${minutes}, ${seconds})`;
+  }
+  return null;
 }
 
 /*******************************************************************************
@@ -348,7 +461,17 @@ function normalizeDuration(value) {
  ******************************************************************************/
 
 function formatDurations(...values) {
-  // Replace this comment with your code...
+  const durations = [];
+
+  for (const value of values) {
+    const duration = normalizeDuration(value);
+
+    if (duration !== null) {
+      durations.push(duration);
+    }
+  }
+
+  return `(${durations.join(', ')})`;
 }
 
 /*******************************************************************************
@@ -380,8 +503,48 @@ function formatDurations(...values) {
  ******************************************************************************/
 
 function typeFromFilename(filename) {
-  // Replace this comment with your code...
-  // NOTE: Use a switch statement in your solution.
+  const extension = filename.split('.').pop();
+
+  switch (extension) {
+    case 'txt':
+    case 'rtf':
+    case 'doc':
+    case 'docx':
+      return 'text';
+    case 'jpg':
+    case 'jpeg':
+    case 'gif':
+    case 'bmp':
+    case 'ico':
+    case 'cur':
+    case 'png':
+    case 'svg':
+    case 'webp':
+      return 'image';
+    case 'mp3':
+    case 'wav':
+      return 'audio';
+    case 'mp4':
+    case 'webm':
+    case 'mpeg':
+    case 'avi':
+      return 'video';
+    case 'json':
+      return 'data';
+    case 'csv':
+    case 'xls':
+      return 'spreadsheet';
+    case 'ttf':
+    case 'woff':
+      return 'font';
+    case 'exe':
+    case 'dll':
+      return 'binary';
+    case 'zip':
+      return 'archive';
+    default:
+      return extension ? 'unknown' : '';
+  }
 }
 
 /*******************************************************************************
@@ -433,7 +596,24 @@ function typeFromFilename(filename) {
  ******************************************************************************/
 
 function generateLicenseBadge(licenseCode) {
-  // Replace this comment with your code...
+  const licenseName = {
+    'CC-BY': 'Creative Commons Attribution License',
+    'CC-BY-NC': 'Creative Commons Attribution-NonCommercial License',
+    'CC-BY-SA': 'Creative Commons Attribution-ShareAlike License',
+    'CC-BY-ND': 'Creative Commons Attribution-NoDerivs License',
+    'CC-BY-NC-SA': 'Creative Commons Attribution-NonCommercial-ShareAlike License',
+    'CC-BY-NC-ND': 'Creative Commons Attribution-NonCommercial-NoDerivs License'
+  }[licenseCode];
+
+  if (licenseName) {
+    const formattedCode = licenseCode.replace('CC-', '').toLowerCase();
+    const licenseURL = `https://creativecommons.org/licenses/${formattedCode}/4.0/`;
+    const badgeURL = `https://licensebuttons.net/l/${formattedCode}/4.0/88x31.png`;
+
+    return `<a href="${licenseURL}"><img src="${badgeURL}" alt="${licenseName}"></a>`;
+  }
+
+  return '<a href="https://choosealicense.com/no-permission/">All Rights Reserved</a>';
 }
 
 /*******************************************************************************
@@ -469,11 +649,78 @@ function generateLicenseBadge(licenseCode) {
  ******************************************************************************/
 
 function countTrue(...values) {
-  // Replace this comment with your code...
+  return count(values, true);
 }
 
 function countFalse(...values) {
-  // Replace this comment with your code...
+  return count(values, false);
+}
+
+function count(values, target) {
+  const trueValues = [
+    'Yes',
+    'yes',
+    'YES',
+    'Y',
+    'Oui',
+    'oui',
+    'OUI',
+    'O',
+    't',
+    'TRUE',
+    'True',
+    'VRAI',
+    'vrai',
+    'V'
+  ];
+
+  const falseValues = [
+    'No',
+    'no',
+    'NO',
+    'Non',
+    'non',
+    'NON',
+    'N',
+    'n',
+    'f',
+    'FALSE',
+    'false',
+    'False',
+    'FAUX',
+    'faux',
+    'Faux',
+    '0',
+    '-1',
+    '-2',
+    '-100000'
+  ];
+  let count = 0;
+
+  for (const value of values) {
+    if (typeof value === 'boolean') {
+      if (value === target) {
+        count++;
+      }
+    } else if (typeof value === 'string') {
+      if (target === true) {
+        if (trueValues.includes(value)) {
+          count++;
+        }
+      } else if (target === false) {
+        if (falseValues.includes(value)) {
+          count++;
+        }
+      } else {
+        return 'error';
+      }
+    } else if (typeof value === 'number') {
+      if ((target && value > 0) || (!target && value <= 0)) {
+        count++;
+      }
+    }
+  }
+  return count;
 }
 
 /*******************************************************************************
@@ -529,8 +776,27 @@ function countFalse(...values) {
  * @returns {string} the properly formatted query string
  ******************************************************************************/
 
-function buildQueryString(queryTerm, sortOrder, count) {
-  // Replace this comment with your code...
+function buildQueryString(queryTerm, sortOrder = 'ascending', count) {
+  if (typeof queryTerm !== 'string' || queryTerm.length === 0) {
+    throw new Error('Invalid query term');
+  }
+
+  if (sortOrder !== 'ascending' && sortOrder !== 'descending') {
+    throw new Error('Invalid sort order');
+  }
+
+  if (typeof count !== 'number' || count < 10 || count > 200) {
+    throw new Error('Invalid count');
+  }
+
+  const encodedQueryTerm = encodeURIComponent(queryTerm);
+  const queryString = `?query_term=${encodedQueryTerm}&count=${count}`;
+
+  if (sortOrder === 'descending') {
+    return queryString + '&descending';
+  }
+
+  return queryString;
 }
 
 // Our unit test files need to access the functions we defined
