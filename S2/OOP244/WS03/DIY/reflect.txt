@@ -1,0 +1,42 @@
+/*/////////////////////////////////////////////////////////////////////////
+                            Workshop 3 Part 2
+Full Name  :CHI-WEI PERNG
+Email      :cperng@myseneca.ca
+Student ID#:121967228
+Section    :NGG
+Date       :2023/06/06
+
+/////////////////////////////////////////////////////////////////////////*/
+
+Reflection:
+
+- to define a class type 
+Define in both ".h" file create class "CalorieList" and "Food". 
+Set all data and some functions private, some function public. 
+  
+- to privatize data within the class type 
+Class members default is private. So, I need to use public functions to query or change class data. 
+
+- to instantiate an object of class type 
+I instantiate a Food in function "void CalorieList::init(int size)". 
+It will use constructor "Food" for Food.h to create instance. 
+
+- to use member functions to query the state of an object 
+In function "int Food::getCalories() const".  
+Can be used to get private data in food. 
+
+- to use member functions to change the state of an object 
+In function "bool CalorieList::add(const char *item_name, int calories, int when)" 
+Can update food data from input parameter. 
+
+- to use standard library facilities to format data inserted into the output stream 
+In function "void Food::display() const" and "void CalorieList::display() const" use "setf", "width", "fill", "unsetf" these format function to modify output fit workshop requirement. 
+
+- to describe to your instructor what you have learned in completing this workshop 
+In this workshop I can instantiate an object using class. It can include variables and functions, in addition, I can specify their scope using public keywords if needed. 
+Use const on functions to prevent changing the value of data. 
+Stat design variables and functions into public and private two categories. 
+
+
+
+

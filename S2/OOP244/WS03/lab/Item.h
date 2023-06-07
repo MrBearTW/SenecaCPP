@@ -15,7 +15,7 @@ namespace sdds
 {
    class Item
    {
-      char m_itemName[21]{};
+      char m_itemName[21];
       double m_price;
       bool m_taxed;
       void setName(const char *name);
