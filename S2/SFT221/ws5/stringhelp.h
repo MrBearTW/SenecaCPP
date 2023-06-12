@@ -1,13 +1,13 @@
 #pragma once
 #ifndef STRINGHELP_H
 #define STRINGHELP_H
-#define MAX_STRING_SIZE 511
-#define MAX_INDEX_SIZE 100
-#define MAX_WORD_SIZE 23
+#define MAX_STRING_SIZE 95
+#define MAX_INDEX_SIZE 5
+#define MAX_WORD_SIZE 18
 struct StringIndex
 {
     char str[MAX_STRING_SIZE + 1];
-    int wordStarts[MAX_INDEX_SIZE];
+    int wordStarts[MAX_WORD_SIZE];
     int lineStarts[MAX_INDEX_SIZE];
     int numberStarts[MAX_INDEX_SIZE];
     int numWords, numLines, numNumbers;

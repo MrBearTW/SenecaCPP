@@ -16,37 +16,44 @@ int nextWhite(const char *str)
     }
     return (result < 0) ? i : result;
 }
+
+// If the string is all digits, return true, otherwise return false.
 int isNumber(const char *str, const int len)
 {
     int i, result = 1;
     for (i = 0; i < len && result; i++)
     {
-        result = result && isdigit(str[i]);
+        result = result && isdigit(str[i]); // isdigit() returns 1 if the character is a digit, returns 0 otherwise
     }
     return result;
 }
 struct StringIndex indexString(const char *str)
 {
-    struct StringIndex result = {{0}, {0}, {0}, 0, 0, 0};
+    struct StringIndex result = {{0}, {0}, {0}, {0}, 0, 0, 0};
     int i, sp;
     strcpy(result.str, str);
+
+    // Check for empty string
     if (str[0] != '\0')
     {
         result.lineStarts[0] = 0;
         result.numLines = 1;
     }
+
     for (i = 0; str[i] != '\0'; i++)
     {
         while (str[i] != '\0' && isspace(str[i]))
         {
             if (str[i] == '\n')
             {
-                result.lineStarts[result.numLines] = i + 1;
+                result.lineStarts[result.numLines++] = i + 1;
             }
             i++;
         }
-        sp = nextWhite(str + i);
-        if (isNumber(str + i, sp - i + 1))
+        sp = nextWhite(str + i); // sp is the index of the next space character
+
+        // Record the start of the word or number
+        if (isNumber(str + i, sp))
         {
             result.numberStarts[result.numNumbers++] = i;
         }
