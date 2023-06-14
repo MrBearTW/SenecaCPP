@@ -1,0 +1,45 @@
+/*/////////////////////////////////////////////////////////////////////////
+                            Workshop 4 Part 2
+Full Name  :CHI-WEI PERNG
+Email      :cperng@myseneca.ca
+Student ID#:121967228
+Section    :NGG
+Date       :2023/06/13
+
+/////////////////////////////////////////////////////////////////////////*/
+
+Reflection:
+
+- define a default constructor 
+
+Both "LabelMaker.h" & "Label.h" has a default have default constructor. It is the one without Parameter "LabelMaker::~LabelMaker()" & "Label::Label()". This will be use when create a new object. 
+
+  
+- define custom constructors with different number of arguments 
+
+Label has three different constructors. 
+    - Label(); 
+    - Label(const char *frameArg); 
+    - Label(const char *frameArg, const char *content); 
+The first one is when you create a new object with no parameter. 
+The second one is when you create a new object with only one char*. 
+The third one is when you create a new object with two char*. 
+  
+
+- define a Destructor to prevent memory leaks. 
+
+Both "LabelMaker.h" & "Label.h" has destructor. "LabelMaker::~LabelMaker()" and "Label::~Label()" 
+The destructor is called when that object reaches the end of its lifetime 
+
+
+- Use the reference of the current object 
+
+I use this in "void Label::readLabel()". 
+Using "this" helps me to differentiate which parameter I am using. 
+  
+
+- describe to your instructor what you have learned in completing this workshop 
+
+I learn how to overload the default constructor; this means can have multitude of ways to create objects in one class. 
+I learn I need to design how destructors should work to handles objects that 
+reach the end of their lifetime. 
