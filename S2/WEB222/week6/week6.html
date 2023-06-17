@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 6</title>
+</head>
+<body>
+    <h2>Week6 class</h2>
+    <h3>Links</h3>
+    <a href="https://www.google.ca/" target="_blank">Google CA</a>
+    <br>
+    <label for="name">Email: </label>
+    <a href="mailto:cperng@myseneca.ca">Mail to me</a><br>
+    <label for="name">Phone: </label>
+    <a href="tel:416-491-5050">416-491-5050</a><br>
+
+    <h3>Image</h3>
+    <h4>Image with link</h4>
+    <a href="https://www.senecacollege.ca/programs/fulltime/CPP.html" target="_blank">
+        <img src="https://www.senecacollege.ca/content/dam/projects/seneca/seneca-logo.svg" alt="seneca-logo" width="200" height="200" title="Seneca Logo">
+    </a>
+
+    <h4>Image Only</h4>
+        <img src="https://www.senecacollege.ca/content/dam/projects/seneca/seneca-logo.svg" alt="seneca-logo" width="200" height="200">
+    
+    <h3>Table</h3>
+    <table border="5">
+        <caption>Order Information</caption>
+    
+        <thead style="color:brown; background-color:rgb(139, 137, 137)">
+            <tr>
+                <th>Quantity</th>
+                <th>Colour</th>
+                <th>Price (CAD)</th>
+                <th>header4</th>
+            </tr>
+        </thead>
+    
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Red</td>
+                <td rowspan="2">$5.60<br>rowspan</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Blue</td>
+                <!-- <td>$3.00</td> -->
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Blue</td>
+                <td colspan="2">$1.50 colspan</td>
+            </tr>
+        </tbody>
+    
+        <tfoot>
+            <tr>
+                <th colspan="2">Total</th>
+                <th>$26.60</th>
+                <th>footer4</th>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
