@@ -10,4 +10,37 @@ Date       :2023/06/20
 
 Reflection:
 
+- define and create binary member operator
+Lab: Account &operator+=(double deposit);
+Lab: Account &operator-=(double withdraw);
+Lab: Account &operator<<(Account &moveToLeft);
+Lab: Account &operator>>(Account &moveToRight);
+DIY: Mark &operator+=(int mark);
 
+
+- define and create a type conversion operator
+DIY: operator int() const;
+DIY: operator double() const;
+DIY: operator char() const;
+
+
+- define and a create unary member operator
+Lab: Account &operator=(int number);
+Lab: Account &operator=(Account &left);
+DIY: Mark &operator=(int mark);
+
+
+- define and create helper binary operator between classes
+Lab: friend double operator+(const Account &left, const Account &right);
+
+
+- define and create a helper operator between a primitive type and a class.
+Lab: friend double operator+=(double &left, const Account &right);
+DIY: int operator+=(int &val, const Mark &rightOper);
+
+
+This week's workshop did a lot of OPERATOR OVERLOADING. The most important thing is to understand the relative relationship between Operator and Operands.
+
+When doing overloading, pay attention to the relative relationship between Operator and Operands, so that returnType, operator, OP_SYMBOL, parameters can be placed in the correct format.
+
+The format placed by HELPER OPERATOR is easily confused.
