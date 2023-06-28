@@ -1,0 +1,4 @@
+[ERROR Thu Jun 15 16:10:22 2023]: error msg
+[WARN Thu Jun 15 16:10:22 2023]: warning msg
+[INFO Thu Jun 15 16:10:22 2023]: info msg
+[INFO Thu Jun 15 16:10:22 2023]: I am 47 years old
