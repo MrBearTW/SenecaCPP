@@ -48,8 +48,17 @@ namespace sdds
         }
     }
 
+    // Prof Feedback
+    // Potential Memory leak in readLabel as it doesn't deallocate previously allocated memory if readLabel is called on the same label twice
     void Label::readLabel()
     {
+        // delete old label if it exists
+        if (oneLineText != nullptr)
+        {
+            delete[] oneLineText;
+            oneLineText = nullptr;
+        }
+        
         char temp[71];
 
         cout << "> ";
