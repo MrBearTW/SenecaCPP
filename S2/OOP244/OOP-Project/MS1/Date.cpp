@@ -107,4 +107,107 @@ namespace sdds
       return RO.read(is);
    }
 
+   // ---------- to develop ----------
+
+   //    This function reads a date from the console in the following format YYYY/MM/DD as follows:
+   std::istream &Date::read(std::istream &is)
+   {
+      // Clears the error code by setting it NO_ERROR
+      errCode(NO_ERROR);
+
+      // Reads the year, the month and the day member variables using istream and ignores a single character after the year and the month values to bypass the Slashes.
+      // Note that the separators do not have to be Slash characters “/” but any separator that is not an integer number.
+      is >> m_year;
+      is.ignore(1);
+      is >> m_mon;
+      is.ignore(1);
+      is >> m_day;
+
+      // Checks if istream has failed.
+      // If it did fail, it will set the error code to CIN_FAILED and clears the istream.
+      // If not, it will validate the values entered.
+      if (is) // checks if stream is still good state
+      {
+         validate();
+      }
+      else // stream state has failed or is bad
+      {
+         errCode(CIN_FAILED);
+         is.clear(); // reset the state to good, allow more ops
+         // Flushes the keyboard
+         while (is.get() != '\n') // clear the buffer of old characters
+         {
+         }
+      }
+      // Returns the istream object
+      return is;
+   }
+
+   // The write method
+   std::ostream &Date::write(std::ostream &os) const
+   {
+      // If the Date object is in a “bad” state (it is invalid) print the “dateStatus()”. Otherwise, the function should write the date in the following format using the ostream object:
+      if (bad())
+      {
+         os << dateStatus();
+      }
+      else
+      {
+         // Prints the year
+         os << m_year;
+         // Prints a Slash “/”
+         os << "/";
+         // Prints the month in two spaces, padding the left digit with zero if the month is a single-digit number
+         os << setw(2) << setfill('0') << right << m_mon;
+         // Prints a Slash “/”
+         os << "/";
+         // Prints the day in two spaces, padding the left digit with zero if the day is a single-digit number
+         os << setw(2) << setfill('0') << right << m_day;
+         // Makes sure the padding is set back to spaces from zero
+         os << setfill(' ');
+      }
+      // Returns the ostream object.
+      return os;
+   }
+
+   // Comparison operator overload methods
+   // Use the return value of the daysSince0001_1_1() method to compare the two dates:
+   bool Date::operator==(const Date &date) const
+   {
+      return daysSince0001_1_1() == date.daysSince0001_1_1();
+   }
+   bool Date::operator!=(const Date &date) const
+   {
+      return daysSince0001_1_1() != date.daysSince0001_1_1();
+   }
+   bool Date::operator<(const Date &date) const
+   {
+      return daysSince0001_1_1() < date.daysSince0001_1_1();
+   }
+   bool Date::operator>(const Date &date) const
+   {
+      return daysSince0001_1_1() > date.daysSince0001_1_1();
+   }
+   bool Date::operator<=(const Date &date) const
+   {
+      return daysSince0001_1_1() <= date.daysSince0001_1_1();
+   }
+   bool Date::operator>=(const Date &date) const
+   {
+      return daysSince0001_1_1() >= date.daysSince0001_1_1();
+   }
+
+   // Operator- method
+   // Returns the difference between two Dates in days.
+   int Date::operator-(const Date &date) const
+   {
+      return daysSince0001_1_1() - date.daysSince0001_1_1();
+   }
+
+   // bool type conversion operator
+   Date::operator bool() const
+   {
+      // It will return true if the date is valid and false if it is not.
+      return !bad();
+   }
 }

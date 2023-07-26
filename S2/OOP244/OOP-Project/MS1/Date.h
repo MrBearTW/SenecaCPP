@@ -49,8 +49,28 @@ namespace sdds
       int errCode() const;              // returns the error code or zero if date is valid
       const char *dateStatus() const;   // returns a string corresponding the current status of the date
       int currentYear() const;          // returns the m_CUR_YEAR value;
+
+      // -------------------- to develop --------------------
+
+      // bool type conversion operator
+      operator bool() const;
+
+      std::istream &read(std::istream &is);        // the read method
+      std::ostream &write(std::ostream &os) const; // The write method
+
+      // Comparison operator overload methods
+      bool operator==(const Date &date) const;
+      bool operator!=(const Date &date) const;
+      bool operator<(const Date &date) const;
+      bool operator>(const Date &date) const;
+      bool operator<=(const Date &date) const;
+      bool operator>=(const Date &date) const;
+
+      // Operator- method
+      int operator-(const Date &date) const;
    };
    std::ostream &operator<<(std::ostream &os, const Date &RO);
    std::istream &operator>>(std::istream &is, Date &RO);
+
 }
 #endif
