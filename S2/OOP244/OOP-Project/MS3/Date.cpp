@@ -16,6 +16,12 @@ using namespace std;
 #include "Date.h"
 namespace sdds
 {
+   // Add for MS3 testing purposes
+   bool sdds_test = false;
+   int sdds_year = 2023;
+   int sdds_mon = 12;
+   int sdds_day = 25;
+
    bool Date::validate()
    {
       errCode(NO_ERROR);
@@ -42,17 +48,40 @@ namespace sdds
    }
    int Date::systemYear() const
    {
-      time_t t = time(NULL);
-      tm lt = *localtime(&t);
-      return lt.tm_year + 1900;
+      // time_t t = time(NULL);
+      // tm lt = *localtime(&t);
+      // return lt.tm_year + 1900;
+      int theYear = sdds_year;
+      if (!sdds_test)
+      {
+         time_t t = time(NULL);
+         tm lt = *localtime(&t);
+         theYear = lt.tm_year + 1900;
+      }
+      return theYear;
    }
    void Date::setToToday()
    {
-      time_t t = time(NULL);
-      tm lt = *localtime(&t);
-      m_day = lt.tm_mday;
-      m_mon = lt.tm_mon + 1;
-      m_year = lt.tm_year + 1900;
+      // time_t t = time(NULL);
+      // tm lt = *localtime(&t);
+      // m_day = lt.tm_mday;
+      // m_mon = lt.tm_mon + 1;
+      // m_year = lt.tm_year + 1900;
+      // errCode(NO_ERROR);
+      if (sdds_test)
+      {
+         m_day = sdds_day;
+         m_mon = sdds_mon;
+         m_year = sdds_year;
+      }
+      else
+      {
+         time_t t = time(NULL);
+         tm lt = *localtime(&t);
+         m_day = lt.tm_mday;
+         m_mon = lt.tm_mon + 1;
+         m_year = lt.tm_year + 1900;
+      }
       errCode(NO_ERROR);
    }
    int Date::daysSince0001_1_1() const
@@ -134,10 +163,12 @@ namespace sdds
       {
          errCode(CIN_FAILED);
          is.clear(); // reset the state to good, allow more ops
+
+         // MS3 remove
          // Flushes the keyboard
-         while (is.get() != '\n') // clear the buffer of old characters
-         {
-         }
+         // while (is.get() != '\n') // clear the buffer of old characters
+         // {
+         // }
       }
       // Returns the istream object
       return is;

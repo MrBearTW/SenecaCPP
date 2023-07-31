@@ -13,6 +13,12 @@
 #include <iostream>
 namespace sdds
 {
+   // MS3 ADDED
+   extern bool sdds_test;
+   extern int sdds_year;
+   extern int sdds_mon;
+   extern int sdds_day;
+
    const int NO_ERROR = 0;
    const int CIN_FAILED = 1;
    const int YEAR_ERROR = 2;
