@@ -217,4 +217,3 @@ B	1216	Y853	Men Are from Mars/ Women Are from Venus	98905	2023/11/12	John Gray
 B	1217	C631	The Hardy Boys	42472	2023/11/20	Various authors asFranklin W. Dixon
 B	1218	M406	The Bobbsey Twins	37365	2023/11/16	Various authors asLaura Lee Hope
 B	1219	V259	Tarzan	76029	2023/11/17	Edgar Rice Burroughs
-B	9999	P123	The Story of My Experiments with Truth	12345	2023/12/25	Mohandas Karamchand Gandhi

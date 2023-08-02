@@ -1,0 +1,150 @@
+Enter the following: 
+P1234
+------------------------------
+Shelf No: P1234
+Title: Date: Author: You entered:
+><
+
+Enter the following: 
+P123
+Seneca Handbook
+2023/13/17
+------------------------------
+Shelf No: P123
+Title: Seneca Handbook
+Date: 2023/13/17
+Author: You entered:
+><
+
+Enter the following: 
+P123
+The Story of My Experiments with Truth
+2023/11/17
+Mohandas Karamchand Gandhi
+------------------------------
+Shelf No: P123
+Title: The Story of My Experiments with Truth
+Date: 2023/11/17
+Author: Mohandas Karamchand Gandhi
+You entered:
+| P123 | The Story of My Experiments wi |  N/A  | 2023/11/17 | Mohandas Karamc |
+And the title is agian: "The Story of My Experiments with Truth"
+Now this publication is on loan to a member with the id: 12345
+The checkout date is: 2023/12/25
+The library unique reference id is: 9999
+| P123 | The Story of My Experiments wi | 12345 | 2023/12/25 | Mohandas Karamc |
+----------------------------------------------------------------
+Adding the Book to the end of the data file:
+appeneded to the file
+
+Contents of the file:
+|*   1*| C544 | The Hobbit.................... | 35277 | 2023/11/14 | J. R. R. Tolkie |
+|*   2*| N576 | The Little Prince............. | 96745 | 2023/11/19 | Antoine de Sain |
+|*   3*| R393 | And Then There Were None...... | 35526 | 2023/11/12 | Agatha Christie |
+|    4 | U264 | She: A History of Adventure... |  N/A  | 2023/11/11 | H. Rider Haggar |
+|    5 | U818 | The Da Vinci Code............. |  N/A  | 2023/11/19 | Dan Brown       |
+|    6 | R856 | Harry Potter and the Prisoner  |  N/A  | 2023/11/10 | J. K. Rowling   |
+|    7 | L290 | Harry Potter and the Order of  |  N/A  | 2023/11/11 | J. K. Rowling   |
+|*   8*| C872 | Harry Potter and the Deathly H | 64984 | 2023/11/17 | J. K. Rowling   |
+|*   9*| E147 | The Catcher in the Rye........ | 90607 | 2023/11/19 | J. D. Salinger  |
+|*  10*| U215 | Ben/Hur: A Tale of the Christ. | 71498 | 2023/11/19 | Lew Wallace     |
+|*  11*| W571 | One Hundred Years of Solitude. | 14022 | 2023/11/24 | Gabriel Garca M |
+|*  12*| J846 | Heidi......................... | 16990 | 2023/11/23 | Johanna Spyri   |
+|*  13*| L667 | Anne of Green Gables.......... | 51189 | 2023/11/24 | Lucy Maud Montg |
+|*  14*| D619 | The Name of the Rose.......... | 22397 | 2023/11/10 | Umberto Eco     |
+|   15 | H405 | Watership Down................ |  N/A  | 2023/11/23 | Richard Adams   |
+|   16 | Z192 | Charlotte's Web............... |  N/A  | 2023/11/17 | E. B. White; il |
+|   17 | Z248 | Jonathan Livingston Seagull... |  N/A  | 2023/11/21 | Richard Bach    |
+|   18 | T223 | A Message to Garcia........... |  N/A  | 2023/11/24 | Elbert Hubbard  |
+|*  19*| F676 | Flowers in the Attic.......... | 85381 | 2023/11/14 | V. C. Andrews   |
+|*  20*| U737 | Sophie's World................ | 60897 | 2023/11/12 | Jostein Gaarder |
+|*  21*| M309 | Kane and Abel................. | 82568 | 2023/11/19 | Jeffrey Archer  |
+|   22 | I325 | War and Peace................. |  N/A  | 2023/11/24 | Leo Tolstoy     |
+|   23 | M760 | Your Erroneous Zones.......... |  N/A  | 2023/11/13 | Wayne Dyer      |
+|   24 | Z305 | The Purpose Driven Life....... |  N/A  | 2023/11/19 | Rick Warren     |
+|   25 | L141 | Valley of the Dolls........... |  N/A  | 2023/11/20 | Jacqueline Susa |
+|*  26*| Z611 | Gone with the Wind............ | 95732 | 2023/11/25 | Margaret Mitche |
+|*  27*| M413 | Nineteen Eighty/Four.......... | 34208 | 2023/11/17 | George Orwell   |
+|*  28*| J587 | The Girl with the Dragon Tatto | 17660 | 2023/11/17 | Stieg Larsson   |
+|*  29*| D427 | The Hunger Games.............. | 52280 | 2023/11/23 | Suzanne Collins |
+|   30 | E662 | The Young Guard............... |  N/A  | 2023/11/17 | Alexander Alexa |
+|   31 | Q413 | A Brief History of Time....... |  N/A  | 2023/11/18 | Stephen Hawking |
+|   32 | O655 | Lust for Life................. |  N/A  | 2023/11/16 | Irving Stone    |
+|   33 | K349 | The 7 Habits of Highly Effecti |  N/A  | 2023/11/18 | Stephen R. Cove |
+|*  34*| Y690 | The Celestine Prophecy........ | 88238 | 2023/11/16 | James Redfield  |
+|*  35*| V829 | The Girl on the Train......... | 26056 | 2023/11/14 | Paula Hawkins   |
+|*  36*| O701 | Uncle Styopa.................. | 73994 | 2023/11/18 | Sergey Mikhalko |
+|*  37*| I780 | Love Story.................... | 46975 | 2023/11/23 | Erich Segal     |
+|   38 | X943 | Mockingjay.................... |  N/A  | 2023/11/21 | Suzanne Collins |
+|   39 | H141 | Andromeda Nebula.............. |  N/A  | 2023/11/17 | Ivan Yefremov   |
+|   40 | D556 | Gone Girl..................... |  N/A  | 2023/11/12 | Gillian Flynn   |
+|   41 | Y409 | The Bermuda Triangle.......... |  N/A  | 2023/11/19 | Charles Berlitz |
+|*  42*| C787 | Animal Farm................... | 11826 | 2023/11/12 | George Orwell   |
+|*  43*| T202 | The Happy Hooker: My Own Story | 94024 | 2023/11/14 | Xaviera Holland |
+|*  44*| D159 | Love You Forever.............. | 50828 | 2023/11/19 | Robert Munsch   |
+|   45 | K161 | What to Expect When You're Exp |  N/A  | 2023/11/20 | Arlene Eisenber |
+|   46 | K215 | The Secret Diary of Adrian Mol |  N/A  | 2023/11/22 | Sue Townsend    |
+|   47 | R741 | Kon/Tiki: Across the Pacific i |  N/A  | 2023/11/23 | Thor Heyerdahl  |
+|   48 | N157 | Where the Wild Things Are..... |  N/A  | 2023/11/22 | Maurice Sendak  |
+|*  49*| L645 | The Secret.................... | 27720 | 2023/11/17 | Rhonda Byrne    |
+|*  50*| K887 | Dune.......................... | 25982 | 2023/11/11 | Frank Herbert   |
+|*  51*| P508 | The Naked Ape................. | 42832 | 2023/11/22 | Desmond Morris  |
+|   52 | L207 | Matilda....................... |  N/A  | 2023/11/15 | Roald Dahl      |
+|   53 | S595 | The Horse Whisperer........... |  N/A  | 2023/11/23 | Nicholas Evans  |
+|   54 | U823 | The Neverending Story......... |  N/A  | 2023/11/22 | Michael Ende    |
+|   55 | M201 | The Outsiders................. |  N/A  | 2023/11/13 | S. E. Hinton    |
+|*  56*| G743 | Sh?gun........................ | 85725 | 2023/11/18 | James Clavell   |
+|*  57*| Z222 | The Pillars of the Earth...... | 30945 | 2023/11/17 | Ken Follett     |
+|*  58*| Y296 | Perfume....................... | 83613 | 2023/11/15 | Patrick Sskind  |
+|*  59*| L111 | The Shadow of the Wind........ | 46030 | 2023/11/15 | Carlos Ruiz Zaf |
+|*  60*| Y471 | Becoming...................... | 53305 | 2023/11/20 | Michelle Obama  |
+|   61 | W733 | Tuesdays with Morrie.......... |  N/A  | 2023/11/18 | Mitch Albom     |
+|   62 | M576 | Follow Your Heart............. |  N/A  | 2023/11/24 | Susanna Tamaro  |
+|   63 | F213 | Long Walk to Freedom.......... |  N/A  | 2023/11/16 | Nelson Mandela  |
+|   64 | V418 | Life After Life............... |  N/A  | 2023/11/21 | Raymond Moody   |
+|*  65*| M852 | Norwegian Wood................ | 44911 | 2023/11/22 | Haruki Murakami |
+|*  66*| Y966 | The Plague.................... | 28406 | 2023/11/24 | Albert Camus    |
+|*  67*| P459 | Man's Search for Meaning...... | 87325 | 2023/11/20 | Viktor Frankl   |
+|*  68*| O151 | The Prophet................... | 66378 | 2023/11/16 | Kahlil Gibran   |
+|*  69*| X564 | The Gruffalo.................. | 76377 | 2023/11/19 | Julia Donaldson |
+|   70 | O741 | Ronia/ the Robber's Daughter.. |  N/A  | 2023/11/21 | Astrid Lindgren |
+|   71 | V392 | Diana: Her True Story......... |  N/A  | 2023/11/23 | Andrew Morton   |
+|   72 | U200 | Catch/22...................... |  N/A  | 2023/11/15 | Joseph Heller   |
+|   73 | T740 | Eye of the Needle............. |  N/A  | 2023/11/10 | Ken Follett     |
+|*  74*| I769 | Wild Swans.................... | 32345 | 2023/11/23 | Jung Chang      |
+|*  75*| X737 | Night......................... | 88228 | 2023/11/22 | Elie Wiesel     |
+|*  76*| T262 | The Total Woman............... | 68109 | 2023/11/14 | Marabel Morgan  |
+|*  77*| V594 | Problems in China's Socialist  | 97800 | 2023/11/25 | Xue Muqiao      |
+|*  78*| J633 | The Dukan Diet................ | 29260 | 2023/11/20 | Pierre Dukan    |
+|   79 | M791 | The Gospel According to Peanut |  N/A  | 2023/11/18 | Robert L. Short |
+|   80 | W580 | The Giver..................... |  N/A  | 2023/11/14 | Lois Lowry      |
+|   81 | D951 | The Goal...................... |  N/A  | 2023/11/18 | Eliyahu M. Gold |
+|   82 | N368 | Angela's Ashes................ |  N/A  | 2023/11/11 | Frank McCourt   |
+|*  83*| T506 | Bridget Jones's Diary......... | 69410 | 2023/11/17 | Helen Fielding  |
+|*  84*| F311 | Goosebumps.................... | 17539 | 2023/11/10 | R. L. Stine     |
+|*  85*| K460 | Berenstain Bears.............. | 78200 | 2023/11/12 | Stan and Jan Be |
+|*  86*| P727 | Diary of a Wimpy Kid.......... | 91885 | 2023/11/22 | Jeff Kinney     |
+|*  87*| S868 | Noddy......................... | 19857 | 2023/11/24 | Enid Blyton     |
+|*  88*| K424 | The Railway Series............ | 75067 | 2023/11/13 | Rev. W. Awdry/C |
+|   89 | M813 | Robert Langdon................ |  N/A  | 2023/11/10 | Dan Brown       |
+|   90 | Y951 | Twilight...................... |  N/A  | 2023/11/25 | Stephenie Meyer |
+|   91 | C663 | Little Critter................ |  N/A  | 2023/11/11 | Mercer Mayer    |
+|   92 | I318 | Fifty Shades.................. |  N/A  | 2023/11/12 | E. L. James     |
+|*  93*| O485 | Geronimo Stilton.............. | 62861 | 2023/11/24 | Elisabetta Dami |
+|*  94*| K954 | Clifford the Big Red Dog...... | 73358 | 2023/11/21 | Norman Bridwell |
+|*  95*| D848 | Dirk Pitt..................... | 13282 | 2023/11/23 | Clive Cussler   |
+|*  96*| P734 | The Chronicles of Narnia...... | 16623 | 2023/11/20 | C. S. Lewis     |
+|*  97*| H554 | The Hunger Games trilogy...... | 30930 | 2023/11/13 | Suzanne Collins |
+|*  98*| V363 | Martine....................... | 95794 | 2023/11/19 | Gilbert Delahay |
+|*  99*| C902 | A Song of Ice and Fire........ | 13881 | 2023/11/17 | George R. R. Ma |
+|  100 | R242 | Nijntje....................... |  N/A  | 2023/11/11 | Dick Bruna      |
+|  101 | R141 | Anpanman...................... |  N/A  | 2023/11/15 | Takashi Yanase  |
+|  102 | D307 | Fear Street................... |  N/A  | 2023/11/24 | R. L. Stine     |
+|  103 | Z256 | The Vampire Chronicles........ |  N/A  | 2023/11/11 | Anne Rice       |
+|* 104*| O220 | OSS 117....................... | 74391 | 2023/11/18 | Jean Bruce      |
+|* 105*| W758 | Magic Tree House series....... | 38222 | 2023/11/25 | Mary Pope Osbor |
+|* 106*| U147 | A Series of Unfortunate Events | 47436 | 2023/11/22 | Lemony Snicketa |
+|* 107*| P604 | Jack Reacher.................. | 30467 | 2023/11/18 | Lee Child       |
+|* 108*| P307 | Where's Wally?................ | 11089 | 2023/11/12 | Martin Handford |
+|* 109*| C631 | The Hardy Boys................ | 42472 | 2023/11/20 | Various authors |
+|* 110*| V259 | Tarzan........................ | 76029 | 2023/11/17 | Edgar Rice Burr |

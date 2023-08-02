@@ -119,9 +119,24 @@ namespace sdds
             | P001 | The Toronto Star.............. | 34037 | 2023/11/17 |
             | P007 | Macleans Magazine............. |  N/A  | 2023/11/11 |
         */
+
         if (conIO(os))
         {
-            os << "| " << m_shelfId << " | " << std::setw(30) << std::left << std::setfill('.') << m_title << " | ";
+            os << "| " << m_shelfId << " | " << std::setw(SDDS_TITLE_WIDTH) << std::left << std::setfill('.');
+            // If the m_title is longer than the SDDS_TITLE_WIDTH value, print the first SDDS_TITLE_WIDTH characters of the title.
+            if (strlen(m_title) > SDDS_TITLE_WIDTH)
+            {
+                char title_30_chars[SDDS_TITLE_WIDTH + 1]{};
+                strncpy(title_30_chars, m_title, SDDS_TITLE_WIDTH);
+                title_30_chars[SDDS_TITLE_WIDTH] = '\0';
+                os << title_30_chars;
+            }
+            else
+            {
+                os << m_title;
+            }
+
+            os << " | ";
             if (m_membership == 0)
             {
                 os << " N/A ";
@@ -141,7 +156,20 @@ namespace sdds
         else
         {
             os << type() << '\t';
-            os << '\t' << m_libRef << '\t' << m_shelfId << '\t' << m_title << '\t';
+            os << '\t' << m_libRef << '\t' << m_shelfId << '\t';
+            // If the m_title is longer than the SDDS_TITLE_WIDTH value, print the first SDDS_TITLE_WIDTH characters of the title.
+            if (strlen(m_title) > SDDS_TITLE_WIDTH)
+            {
+                char title_30_chars[SDDS_TITLE_WIDTH + 1]{};
+                strncpy(title_30_chars, m_title, SDDS_TITLE_WIDTH);
+                title_30_chars[SDDS_TITLE_WIDTH] = '\0';
+                os << title_30_chars << '\t';
+            }
+            else
+            {
+                os << m_title << '\t';
+            }
+
             if (m_membership == 0)
             {
                 os << "N/A";
@@ -159,7 +187,8 @@ namespace sdds
     // Read all the values in local variables before setting the attributes to any values.
     std::istream &Publication::read(std::istream &is)
     {
-        char temp_title[SDDS_TITLE_WIDTH + 1]{};
+        // Store the whole title but just print the first 30 characters.
+        char temp_title[256]{};
         int temp_membership = 0;
         int temp_libRef = -1;
         char temp_shelfId[SDDS_SHELF_ID_LEN + 1]{};
@@ -177,7 +206,6 @@ namespace sdds
         resetDate();
 
         // Then, if the istr argument is a console IO object (use conIO()) read the attributes as follows:
-
         if (conIO(is))
         {
             // prompt: "Shelf No: "
@@ -196,7 +224,7 @@ namespace sdds
             std::cout << "Title: ";
 
             // - read the title
-            is.getline(temp_title, SDDS_TITLE_WIDTH + 1);
+            is.getline(temp_title, 256);
 
             // - prompt: "Date: "
             std::cout << "Date: ";
@@ -221,7 +249,7 @@ namespace sdds
 
             // - read the title
             // - skip the tab
-            is.getline(temp_title, SDDS_TITLE_WIDTH + 1, '\t');
+            is.getline(temp_title, 256, '\t');
 
             // - read the membership
             is >> temp_membership;

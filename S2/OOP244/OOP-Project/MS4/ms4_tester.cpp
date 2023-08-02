@@ -38,56 +38,56 @@ Book getNextRec(ifstream& ifstr) {
 int main() {
    sdds::sdds_test = true;
    Book pd;
-   fcopy( "Books.txt", "BooksOriginal.txt" );
-   cout << "An Invalid Book printout:" << endl;
-   cout << ">" << pd << "<" << endl;
-   cout << endl << "Enter the following: " << endl
-      << "P1234" << endl
-      << "------------------------------" << endl;
-   pd = readBook(cin);
-   if (!cin) {
-      cin.clear();
-      cin.ignore(1000, '\n');
-   }
-   else {
-      cout << "This is not supposed to be printed!" << endl;
-   }
-   cout << "You entered:" << endl;
-   cout << ">" << pd << "<" << endl;
-   cout << endl << "Enter the following: " << endl
-      << "P123" << endl
-      << "Seneca Handbook" << endl
-      << "2023/13/17" << endl
-      << "------------------------------" << endl;
-   pd = readBook(cin);
-   if (!cin) {
-      cin.clear();
-      cin.ignore(1000, '\n');
-   }
-   else {
-      cout << "This is not supposed to be printed!" << endl;
-   }
-   cout << "You entered:" << endl;
-   cout << ">" << pd << "<" << endl;
-   cout << endl << "Enter the following: " << endl
-      << "P123" << endl
-      << "The Story of My Experiments with Truth" << endl
-      << "2023/11/17" << endl
-      << "Mohandas Karamchand Gandhi" << endl
-      << "------------------------------" << endl;
-   pd = readBook(cin);
-   cout << "You entered:" << endl;
-   cout << pd << endl;
-   cout << "And the title is agian: \"" << (const char*)pd << "\"" << endl;
-   pd.set(12345);
-   if (pd.onLoan()) {
-      cout << "Now this publication is on loan to a member with the id: 12345" << endl;
-      cout << "The checkout date is: " << pd.checkoutDate() << endl;
-      pd.setRef(9999);
-      cout << "The library unique reference id is: " << pd.getRef() << endl;
-      cout << pd << endl;
-      cout << "----------------------------------------------------------------" << endl;
-    }
+   // fcopy( "Books.txt", "BooksOriginal.txt" );
+   // cout << "An Invalid Book printout:" << endl;
+   // cout << ">" << pd << "<" << endl;
+   // cout << endl << "Enter the following: " << endl
+   //    << "P1234" << endl
+   //    << "------------------------------" << endl;
+   // pd = readBook(cin);
+   // if (!cin) {
+   //    cin.clear();
+   //    cin.ignore(1000, '\n');
+   // }
+   // else {
+   //    cout << "This is not supposed to be printed!" << endl;
+   // }
+   // cout << "You entered:" << endl;
+   // cout << ">" << pd << "<" << endl;
+   // cout << endl << "Enter the following: " << endl
+   //    << "P123" << endl
+   //    << "Seneca Handbook" << endl
+   //    << "2023/13/17" << endl
+   //    << "------------------------------" << endl;
+   // pd = readBook(cin);
+   // if (!cin) {
+   //    cin.clear();
+   //    cin.ignore(1000, '\n');
+   // }
+   // else {
+   //    cout << "This is not supposed to be printed!" << endl;
+   // }
+   // cout << "You entered:" << endl;
+   // cout << ">" << pd << "<" << endl;
+   // cout << endl << "Enter the following: " << endl
+   //    << "P123" << endl
+   //    << "The Story of My Experiments with Truth" << endl
+   //    << "2023/11/17" << endl
+   //    << "Mohandas Karamchand Gandhi" << endl
+   //    << "------------------------------" << endl;
+   // pd = readBook(cin);
+   // cout << "You entered:" << endl;
+   // cout << pd << endl;
+   // cout << "And the title is agian: \"" << (const char*)pd << "\"" << endl;
+   // pd.set(12345);
+   // if (pd.onLoan()) {
+   //    cout << "Now this publication is on loan to a member with the id: 12345" << endl;
+   //    cout << "The checkout date is: " << pd.checkoutDate() << endl;
+   //    pd.setRef(9999);
+   //    cout << "The library unique reference id is: " << pd.getRef() << endl;
+   //    cout << pd << endl;
+   //    cout << "----------------------------------------------------------------" << endl;
+   //  }
    cout << "Adding the Book to the end of the data file:" << endl;
    ofstream fileout("Books.txt", ios::app);
    if (pd) {
