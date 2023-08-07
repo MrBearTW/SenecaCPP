@@ -119,7 +119,6 @@ namespace sdds
             | P001 | The Toronto Star.............. | 34037 | 2023/11/17 |
             | P007 | Macleans Magazine............. |  N/A  | 2023/11/11 |
         */
-
         if (conIO(os))
         {
             os << "| " << m_shelfId << " | " << std::setw(SDDS_TITLE_WIDTH) << std::left << std::setfill('.');
@@ -155,24 +154,13 @@ namespace sdds
         // No newline is printed afterwards either way.
         else
         {
-            os << type() << '\t';
+            os << type();
             os << '\t' << m_libRef << '\t' << m_shelfId << '\t';
-            // If the m_title is longer than the SDDS_TITLE_WIDTH value, print the first SDDS_TITLE_WIDTH characters of the title.
-            if (strlen(m_title) > SDDS_TITLE_WIDTH)
-            {
-                char title_30_chars[SDDS_TITLE_WIDTH + 1]{};
-                strncpy(title_30_chars, m_title, SDDS_TITLE_WIDTH);
-                title_30_chars[SDDS_TITLE_WIDTH] = '\0';
-                os << title_30_chars << '\t';
-            }
-            else
-            {
-                os << m_title << '\t';
-            }
+            os << m_title << '\t';
 
             if (m_membership == 0)
             {
-                os << "N/A";
+                os << "0";
             }
             else
             {

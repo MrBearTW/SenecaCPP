@@ -13,19 +13,42 @@ namespace sdds
     }
 
     // The rule of three
+
+    // Copy Constructor
     Book::Book(const Book &src) : Publication(src)
     {
+        // Check if the object m_authorName is not nullptr
+        if (this->m_authorName != nullptr)
+        {
+            delete[] this->m_authorName;
+            this->m_authorName = nullptr;
+        }
+
+        // Check if the incoming object m_authorName is not nullptr
         if (src.m_authorName != nullptr)
         {
-            m_authorName = new char[strlen(src.m_authorName) + 1];
-            strcpy(m_authorName, src.m_authorName);
+            this->m_authorName = new char[strlen(src.m_authorName) + 1];
+            strcpy(this->m_authorName, src.m_authorName);
         }
         else
         {
-            m_authorName = nullptr;
+            this->m_authorName = nullptr;
         }
+        
+        // if (src.m_authorName != nullptr)
+        // {
+        //     m_authorName = new char[strlen(src.m_authorName) + 1];
+        //     strcpy(m_authorName, src.m_authorName);
+        // }
+        // else // If the incoming object is nullptr, 
+         
+        // {
+        //     delete[] m_authorName;
+        //     m_authorName = nullptr;
+        // }
     }
 
+    // Copy Assignment Operator
     Book &Book::operator=(const Book &src)
     {
         if (this != &src)
@@ -47,6 +70,7 @@ namespace sdds
         return *this;
     }
 
+    // Destructor
     Book::~Book()
     {
         delete[] m_authorName;

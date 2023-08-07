@@ -48,9 +48,6 @@ namespace sdds
    }
    int Date::systemYear() const
    {
-      // time_t t = time(NULL);
-      // tm lt = *localtime(&t);
-      // return lt.tm_year + 1900;
       int theYear = sdds_year;
       if (!sdds_test)
       {
@@ -62,12 +59,6 @@ namespace sdds
    }
    void Date::setToToday()
    {
-      // time_t t = time(NULL);
-      // tm lt = *localtime(&t);
-      // m_day = lt.tm_mday;
-      // m_mon = lt.tm_mon + 1;
-      // m_year = lt.tm_year + 1900;
-      // errCode(NO_ERROR);
       if (sdds_test)
       {
          m_day = sdds_day;

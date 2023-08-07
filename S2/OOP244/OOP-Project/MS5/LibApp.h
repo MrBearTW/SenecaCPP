@@ -1,6 +1,10 @@
 #ifndef SDDS_LIBAPP_H
 #define SDDS_LIBAPP_H
 #include "Menu.h"
+#include "Publication.h"
+#include "Lib.h"
+#include "Book.h"
+#include "Streamable.h"
 
 namespace sdds
 {
@@ -19,10 +23,33 @@ namespace sdds
       // Instantiate a Menu in this function and initialize it with the message argument.
       bool confirm(const char *message);
 
-      // Simple private fuctions:
-      void load();      // prints: "Loading Data"<NEWLINE>
-      void save();      // prints: "Saving Data"<NEWLINE>
-      void search();    // prints: "Searching for publication"<NEWLINE>
+      // File name
+      // Add an array of 256 characters to hold the publication data file name.
+      char m_filename[256];
+
+      // PPA
+      // Publication Pointers Array
+      // Create and add an array of Publication pointers to the size of SDDS_LIBRARY_CAPACITY. This array will be populated with all the records of the publication data file when the LibApp is instantiated.
+      Publication *m_ppa[SDDS_LIBRARY_CAPACITY]{};
+
+      // NOLP
+      // Number Of Loaded Publications
+      // Add an integer to hold the number of Publications loaded into the PPA.
+      int m_nolp;
+
+      // LLRN
+      // Last Library Reference Number
+      // Add an integer to hold the last library reference number read from the data file. This number will be used to assign new library reference numbers to new publications added to the library. When a new publication is added to the library, this number will be added by one and then assigned to the new publication. Doing this; each publication in the library will have a unique library reference number.
+      int m_llrn;
+
+      // Publication Type Menu
+      Menu m_pubTypeMenu;
+
+      void load();
+      void save();
+
+      // Add needed arguments so the search function can be called in three different modes:
+      int search(int searchMode);
       void returnPub(); // calls the search() method.
 
       // Methods with confirmation
@@ -32,10 +59,15 @@ namespace sdds
 
    public:
       // Constructor
-      LibApp();
+      LibApp(const char *filename);
+      // Destructor
+      ~LibApp();
 
       // The run method
       void run();
+
+      // Publication* getPub(int libRef) method
+      Publication *getPub(int libRef);
    };
 }
 #endif // !SDDS_LIBAPP_H
