@@ -1,0 +1,100 @@
+/*/////////////////////////////////////////////////////////////////////////
+                            Workshop 6
+Full Name  :CHI-WEI PERNG
+Email      :cperng@myseneca.ca
+Student ID#:121967228
+Section    :NGG
+Date       :2023/07/11
+
+/////////////////////////////////////////////////////////////////////////*/
+
+Reflection:
+
+- I find out if I have both 1 and 2 it will cause redefinition. So I delete 2 and use 1 to solve the problem.
+    1. char *m_value{nullptr};
+    2. Line::Line()
+        {
+            m_value = nullptr;
+        }
+
+- I have some segmentation fault in my program when I run the tester file. So I try to use valgrind to find out the problem. And try to find out the solution.
+    - [1]    53931 segmentation fault  ./w6p1_tester
+    - Segmentation faults in C or C++ is an error that occurs when a program attempts to access a memory location it does not have permission to access. Generally, this error occurs when memory access is violated and is a type of general protection fault. Segfaults are the abbreviation for segmentation faults.   
+- This are some message I get during the process. I try to find out the solution on stackoverflow. But I still can't solve the problem.
+    - w6p1_tester(57327,0x1f9bf9e00) malloc: *** error for object 0x1f070030: pointer being freed was not allocated
+    - w6p1_tester(57327,0x1f9bf9e00) malloc: *** set a breakpoint in malloc_error_break to debug
+    - https://stackoverflow.com/questions/7935603/c-pointer-being-freed-was-not-allocated-error
+
+
+
+- At very first version in my code, I forget to use "Deep copy", so I only apply "Shallow copy" to copy the data. But I find out it will cause some problem(Like below). So I change it to "Deep copy" to solve the problem.
+    -   >>> First ten lines of : C_echoes.txt
+        1: 
+        2: 
+        3: 
+        4: 
+        5: 
+        6: 
+        7: 
+        8: 
+        9: 
+        10: 
+
+        -------------------------------------------------------------
+        >>> First ten lines of : C_seamus.txt
+        1: 
+        2: 
+        3: 
+        4: 
+        5: 
+        6: 
+        7: 
+        8: 
+        9: 
+        10: 
+
+- use the C++ string class to extract an unknown number of characters from the input.
+    - From chart * to string class is a little different.
+    - Use string class to extract an unknown number of characters from the input.
+    - Use getline() to extract an unknown number of characters from the input.
+
+
+- During lab time notes:
+    - delete
+        - delete undefined pointer is safe (nothing will happen)
+        - delete undefined pointer twice is not safe (undefined behavior)
+    - delete nullptr
+        - delete nullptr; nothinhg will happen
+        - don't need to check in destructor
+    - Add {} to initialize the variable
+        - Uniform Initialization in C++ (will teach in OOP344)
+    - Orignal Rule of three (C++98) Only do shallow copy
+        - destructor
+        - copy constructor
+        - copy assignment operator
+    - Prevent copying and assignment in a class
+        - Line(const Line &) = delete;
+        - Syntax: = delete
+
+
+
+- Keep trying to find out where cause memory leak after lab time. 
+    - TextFile.cpp:211:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+            while (i < m_noOfLines)
+    - valgrind --track-origins=yes ws
+        ==15849== 
+        ==15849== HEAP SUMMARY:
+        ==15849==     in use at exit: 12 bytes in 1 blocks
+        ==15849==   total heap usage: 146 allocs, 145 frees, 208,831 bytes allocated
+        ==15849== 
+        ==15849== LEAK SUMMARY:
+        ==15849==    definitely lost: 12 bytes in 1 blocks
+        ==15849==    indirectly lost: 0 bytes in 0 blocks
+        ==15849==      possibly lost: 0 bytes in 0 blocks
+        ==15849==    still reachable: 0 bytes in 0 blocks
+        ==15849==         suppressed: 0 bytes in 0 blocks
+        ==15849== Rerun with --leak-check=full to see details of leaked memory
+        ==15849== 
+        ==15849== For lists of detected and suppressed errors, rerun with: -s
+        ==15849== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+- But sadly I still fail. So I use "Uniform Initialization" to pass the matrix.
