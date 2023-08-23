@@ -1,0 +1,39 @@
+/*/////////////////////////////////////////////////////////////////////////
+                            Workshop 7
+Full Name  :CHI-WEI PERNG
+Email      :cperng@myseneca.ca
+Student ID#:121967228
+Section    :NGG
+Date       :2023/07/18
+
+/////////////////////////////////////////////////////////////////////////*/
+
+Reflection:
+
+- Double include is to test the header file is protected or not.
+#include "Truck.h"
+#include "Truck.h" // intentional
+#include "MotorVehicle.h"
+#include "MotorVehicle.h" // intentional
+
+- inherit a derived class from a base class
+    - base class is MotorVehicle, derived class is Truck
+    - Class Truck can access all the public members of Class MotorVehicle.
+    
+- shadow a base class member function with a derived class member function
+    - The act where in the derived function masks the base function of the same name is called shadowing.
+    - MotorVehicle and Truck have the same member function name are write and read, but they have different function body.
+    - The derived class member function will be called when the object is a derived class object.
+
+- access a shadowed member function that is defined in a base class
+    - use scope resolution operator to access the shadowed member function.
+    - MotorVehicle::read(std::istream& istr) and MotorVehicle::write(std::ostream& ostr) are used in Truck::read(std::istream& istr) and Truck::write(std::ostream& ostr) respectively.
+
+- utilize custom input/output operators with these classes
+    - use read and write function to read and write the data from the main function and input.
+    - use the overloaded operator<< and operator>> to read and write the data from the main function.
+
+- describe to your instructor what you have learned in completing this workshop
+    - By doing this workshop, I learned how to use the inheritance to create a derived class from a base class.
+    - I learned how to use the scope resolution operator to access the shadowed member function in a hierarchy relationship.
+    - I also learned how to use the overloaded operator<< and operator>> to read and write the data from the main function.
