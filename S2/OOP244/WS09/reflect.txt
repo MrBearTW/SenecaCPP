@@ -7,3 +7,46 @@ Section    :NGG
 Date       :2023/08/01
 
 /////////////////////////////////////////////////////////////////////////*/
+
+
+1. In the lab 
+
+- Confuses  why we are using a virtual function 
+    virtual void write(std::ostream &os) const; 
+
+ 	- Explain: 
+        // Text* t = new HtmlText; 
+        // t.write(); 
+
+        // with virtual we will call based on dynamic type aka html 
+        // wihtout virtual we will always call static type aka text 
+
+        // Key word: dynamic dispatch
+        // Check class demon: Animal / Hours 
+
+
+2. Learning Outcomes 
+
+- Apply the rule of three and its derived class. 
+    - Apply the rule of three to both the Text and HtmlText classes.
+    - rule of three
+        - destructor
+        - copy constructor
+        - copy assignment operator
+
+- Use your acquired skills throughout the semester to read a file into dynamically allocated memory. 
+    - Read a file into dynamically allocated memory.
+    - In the tester function, read the file into a Text object.
+    - In the Test class, read the file into a Text object.
+  
+
+3. Problem I meet in this workshop 
+- I miss using different kind of parameter in virtual function and implement function af first time.
+    - So, I use some time to debug, and find out the problem and fix it.
+- I learn why need to use virtual to do dynamic dispatch. 
+    - Because we want to call the function based on dynamic type. 
+    - If we don't use virtual, we will always call the function based on static type. 
+    - So, we will always call the function in base class. 
+    - But, if we use virtual, we will call the function based on dynamic type. 
+    - So, we will call the function in derived class. 
+    - So, we can use virtual to do dynamic dispatch.
