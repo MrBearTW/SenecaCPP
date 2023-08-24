@@ -1,0 +1,41 @@
+/*/////////////////////////////////////////////////////////////////////////
+                            Workshop 8
+Full Name  :CHI-WEI PERNG
+Email      :cperng@myseneca.ca
+Student ID#:121967228
+Section    :NGG
+Date       :2023/07/26
+
+/////////////////////////////////////////////////////////////////////////*/
+
+1. Lab note:
+- compile give Destructor basicly do nothing
+- When object is out of scope, menuTitle(object in object) will be deleted automatically (no need to delete it manually)
+- LibShape only implement one function () so LibShape is still ABSTRACT BASE CLASSES(ABCs).
+    - function getSpecs: got implemented in LibShape.cpp
+    - function draw: did not get implemented in LibShape.cpp
+- ignore and while loop is same in this workshop
+    - ignore: ignore the character in the stream
+    - while loop: loop until the condition is false
+
+2. Learning Outcomes
+- define pure virtual functions
+    - define in Shape.h
+        - virtual void draw(std::ostream &os) const = 0;
+        - virtual void getSpecs(std::istream &is) = 0;
+- create abstract base classes
+    - Shape.h and LblShape.h is abstract base classes (ABCs)
+- implement behaviour using virtual functions
+    - implement in LblShape.cpp
+        - void getSpecs(std::istream &is);
+    - implement in Line.cpp and Rectangle.cpp
+        - void draw(std::ostream &os) const;
+- explain the difference between an abstract base class and a concrete class
+    - In this workshop
+        - Shape and LblShape are abstract base class
+        - Line and Rectangle are concrete class
+- describe what you have learned in completing this workshop
+    - how to set pure virtual function, I forget "= 0" at the first time
+    - how to use virtual function to implement polymorphism (dynamic binding)
+
+
