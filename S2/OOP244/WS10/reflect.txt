@@ -4,8 +4,33 @@ Full Name  :CHI-WEI PERNG
 Email      :cperng@myseneca.ca
 Student ID#:121967228
 Section    :NGG
-Date       :2023/08/04
+Date       :2023/08/08
 
 /////////////////////////////////////////////////////////////////////////*/
 
 
+For search function template:
+1. Firs I need to understand the Collection class template in Collection.h file.
+2. Then understand the Collection class relationship with the Car, Student, and Employee classes.
+3. Understand why need 2 template types for this function template. (template type 1 and template type 2)  Because search arguments(Key) may be different types.
+4. Then create the function arguments using the Collection class template.
+5. Then create the function body using the "==" operator to check for a match between the objects and the key.
+6. Then use the "add" function of the Collection class to add the matched objects to the Collection object (templated objects)
+
+For listArrayElements function template:
+1. Observing how this function is used in main.cpp and observe the output.
+2. Following the instruction to create the function arguments
+3. Then create the function body to print the Title and then go to newline.
+4. Then print the row number and then insert each element of the array into cout with a newline attached.
+
+----------
+Reflection for workshop 10
+
+In this Workshop, I learned how to create a function template and how to use it.  
+I also learned how to use the Collection class template and how to use it.
+Use template to create a function that can be used for different types of objects.
+By using the Collection class template, I can create a Collection object that can store different types of objects.
+
+Because this workshop need to fill in the function in main.cpp, I need to understand the function arguments and the function body. This need to compare with the output to see if the function is working correctly.
+
+After find out the patten of the template, I can use it to finish the rest of the code.
