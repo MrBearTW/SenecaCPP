@@ -1,0 +1,18 @@
+{
+  "name": "web322assignment2",
+  "version": "1.0.0",
+  "description": "WEB322Assignment2",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Chi-Wei Perng",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  }
+}
