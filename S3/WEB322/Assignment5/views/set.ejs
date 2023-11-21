@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>Set</title>
+    <!-- Quote AJAX -->
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        try {
+          let res = await fetch("https://quotable.io/random");
+          let q = await res.json();
+
+          document.getElementById(
+            "quote"
+          ).innerHTML = `"${q.content}"<br />- <em>${q.author}</em>`;
+        } catch (err) {
+          console.log(err);
+        }
+      });
+    </script>
+  </head>
+  <body tabindex="-1">
+    <!-- Nav bar -->
+    <%- include('partials/navbar') %>
+    <!-- End of Nav bar -->
+
+    <div class="container mx-auto p-4">
+      <div class="hero bg-base-200 rounded-lg p-6">
+        <div class="hero-content text-center">
+          <div class="max-w-md">
+            <h1 class="text-5xl font-bold"><%= data.name %></h1>
+
+            <p class="py-6">
+              Below, you will find detailed information about the set: <%=
+              data.name %>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <br />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <img
+            class="w-full rounded-lg"
+            src="<%= data.img_url %>"
+            alt=" <%= data.name %> Image"
+          />
+        </div>
+        <div class="prose">
+          <p>
+            <span class="font-bold">Set Name: </span> <%= data.name %> <br />
+            <span class="font-bold">Year Released: </span> <%= data.year %>
+            <br />
+            <span class="font-bold">Theme: </span> <%= data.theme %> <br />
+            <span class="font-bold">Number of Parts: </span> <%= data.num_parts
+            %> <br />
+
+            <!-- Quote AJAX -->
+            <span
+              class="primary-content underline decoration-pink-500/30"
+              id="quote"
+            ></span>
+            <br /><br />
+
+            <a
+              class="btn btn-primary btn-sm"
+              href="#"
+              onclick="history.back(); return false;"
+              >RETURN</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
