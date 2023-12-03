@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>Lego Collection (Assignment 5)</title>
+  </head>
+  <body>
+    <!-- Nav bar -->
+    <%- include('partials/navbar') %>
+    <!-- End of Nav bar -->
+
+    <!-- •	Have an element with class "container mx-auto", containing: -->
+    <div class="container mx-auto">
+      <!-- o	A "hero" daisyUI component featuring some text inviting users to explore the Lego collection and a link styled as a "btn" that links to "/lego/sets" -->
+      <div class="hero bg-base-200">
+        <div class="hero-content text-center">
+          <div class="max-w-md">
+            <h1 class="text-5xl font-bold">Explore the Lego Collection</h1>
+            <p class="py-6">A collection of Lego sets wait for you!</p>
+            <a href="/lego/sets" class="btn btn-primary">Explore</a>
+          </div>
+        </div>
+      </div>
+
+      <br />
+
+      <!-- o	A responsive grid system containing 3 columns, each containing a "card" component featuring one of the items from your lego set (hard-coded in the html).  Each card must contain: -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div>
+          <div class="card bg-base-100 shadow-xl">
+            <figure>
+              <img
+                class="w-full"
+                src="https://cdn.rebrickable.com/media/sets/6218490-1.jpg"
+                alt="Lego Set"
+              />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">85 Sky Tower</h2>
+              <p>The represented structure is located in Kaohsiung, Taiwan.</p>
+              <div class="card-actions justify-end">
+                <a href="/lego/sets/6218490-1" class="btn btn-primary">View</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="card bg-base-100 shadow-xl">
+            <figure>
+              <img
+                class="w-full"
+                src="https://cdn.rebrickable.com/media/sets/8099-1.jpg"
+                alt="Lego set"
+              />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Destroyer</h2>
+              <p>Midi-Scale Imperial Star Destroyer</p>
+              <div class="card-actions justify-end">
+                <a href="/lego/sets/8099-1" class="btn btn-primary">View</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="card bg-base-100 shadow-xl">
+            <figure>
+              <img
+                class="w-full"
+                src="https://cdn.rebrickable.com/media/sets/75899-1.jpg"
+                alt="Lego Set"
+              />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">LaFerrari</h2>
+              <p>
+                Gear up and take the super-stylish LEGO Speed Champions version
+                of LaFerrari for a spin! (From LEGO.com)
+              </p>
+              <div class="card-actions justify-end">
+                <a href="/lego/sets/75899-1" class="btn btn-primary">View</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
