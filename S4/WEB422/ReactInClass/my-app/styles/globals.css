@@ -6,3 +6,11 @@
 table, tr, td, th {
   border: 1px solid black;
 }
+
+body {
+  margin: 0;
+}
+
+body div{
+  padding: 10px;
+}
