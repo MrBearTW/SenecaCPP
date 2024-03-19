@@ -14,3 +14,8 @@ body {
 body div{
   padding: 10px;
 }
+
+.inputError{
+  border: 1px solid red;
+  background-color: lightpink;
+}

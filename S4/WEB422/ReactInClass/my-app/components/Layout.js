@@ -15,6 +15,7 @@ export default function Layout({ children }) {
   return (
     <>
       <h1>Next.js Routing Practice</h1>
+      <Link href="/controlled">Home (Controlled Component)</Link> | <Link href="/advanced">Advanced (React Hook Form)</Link>
       <Link href="/">Home</Link> | <Link href="/about">About</Link>|{" "}
       <span onClick={navigateDashboard}>Dashboard</span>|{" "}
       <Link href="/product/5">Product 5 (demo)</Link> |{" "}
