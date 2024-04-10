@@ -1,17 +1,17 @@
 /*********************************************************************************
- * WEB422 – Assignment 4
+ * WEB422 – Assignment 5
  *
  * I declare that this assignment is my own work in accordance with Seneca's
  * Academic Integrity Policy:
  *
  * https://www.senecapolytechnic.ca/about/policies/academic-integrity-policy.html
  *
- * Name: Chi-Wei Perng Student ID: 121967228 Date: 2024 March 8
+ * Name: Chi-Wei Perng Student ID: 121967228 Date: 2024 March 22
  *
  ********************************************************************************/
 
 import React from "react";
-import {Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 
 export default function Home() {
