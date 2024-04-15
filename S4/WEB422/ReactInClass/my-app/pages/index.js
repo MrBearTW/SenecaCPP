@@ -5,21 +5,27 @@ import Hello from "@/components/Hello";
 import Post from "@/components/Post";
 import Posts from "@/components/Posts";
 import RandomNumbers from "@/components/RandomNumbers";
+import Component1 from "@/components/Component1";
+import ComponentA from "@/components/ComponentA";
 
-
-export function getStaticProps(){
-  return new Promise((resolve,reject)=>{
-    fetch("https://jsonplaceholder.typicode.com/posts/1").then(res=>res.json()).then(data=>{
-      resolve({props: {staticPost: data }})
-    });
+export function getStaticProps() {
+  return new Promise((resolve, reject) => {
+    fetch("https://jsonplaceholder.typicode.com/posts/1")
+      .then((res) => res.json())
+      .then((data) => {
+        resolve({ props: { staticPost: data } });
+      });
   });
 }
-
 
 export default function Home(props) {
   return (
     <>
-      
+      {/* ---------- Week 8 ---------- */}
+      <Component1 />
+      <br />
+      <ComponentA />
+
       {/* ---------- Week 4 class ---------- */}
       <Posts />
       <hr />
